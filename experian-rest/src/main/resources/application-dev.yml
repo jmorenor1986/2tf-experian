@@ -3,6 +3,10 @@ operaciones:
     urlBase: https://demo-servicesesb.datacredito.com.co
     evidente:
       urlEvidente: /wss/idws2/services/ServicioIdentificacionPlus
+      idUsuarioEntidad: ODAwODkyMzA=
+      paramProducto: 3136
+      producto: 010
+      canal: 001
 server:
   servlet:
     context-path: /experian-rest
