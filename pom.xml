@@ -9,8 +9,8 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>experian-web</module>
         <module>experian-evidente</module>
+        <module>experian-rest</module>
     </modules>
     <name>experian</name>
     <description>service to consume services soap from experian</description>
