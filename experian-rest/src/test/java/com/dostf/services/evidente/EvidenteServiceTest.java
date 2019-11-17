@@ -28,7 +28,7 @@ public class EvidenteServiceTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         evidenteService = new EvidenteService(evidenteClient);
-        evidenteClient = new EvidenteCliente(evidenteProperties);
+        evidenteClient = new EvidenteCliente(operacionesProperties);
     }
 
     @Test
