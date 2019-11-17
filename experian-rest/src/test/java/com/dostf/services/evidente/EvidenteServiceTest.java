@@ -2,6 +2,7 @@ package com.dostf.services.evidente;
 
 import com.dostf.clients.IEvidenteClient;
 import com.dostf.config.properties.EvidenteProperties;
+import com.dostf.config.properties.OperacionesProperties;
 import com.dostf.dtos.BaseDto;
 import com.dostf.dtos.evidente.ValidarDto;
 import com.dostf.services.evidente.imp.EvidenteService;
@@ -21,7 +22,7 @@ public class EvidenteServiceTest {
     @Mock
     private BaseDto baseDto;
     @Mock
-    private EvidenteProperties evidenteProperties;
+    private OperacionesProperties operacionesProperties;
 
     @Before
     public void setUp() {
