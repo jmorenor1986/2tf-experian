@@ -2,6 +2,7 @@ package com.dostf.experian.evidente.services;
 
 import com.dostf.experian.evidente.clients.IEvidenteClient;
 import com.dostf.experian.evidente.services.imp.EvidenteService;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -22,6 +23,8 @@ public class EvidenteServiceTest {
     @Test
     public void testValidarSuccess() {
         Mockito.when(evidenteClient.validarIdentidad(Mockito.any())).thenReturn(Mockito.anyString());
+        String result = evidenteService.validarIdentidad(Mockito.any());
+        Assert.assertNotNull(result);
     }
 
 }

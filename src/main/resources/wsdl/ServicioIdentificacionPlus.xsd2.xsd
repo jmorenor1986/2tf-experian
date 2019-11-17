@@ -1,0 +1,190 @@
+<xsd:schema targetNamespace="http://ws.id.dc.com/v1" attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:id="http://ws.id.dc.com/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <xsd:element name="consultarParametrizacionResponse" type="id:consultarParametrizacionResponse"/>
+   <xsd:complexType name="consultarParametrizacionResponse">
+      <xsd:sequence>
+         <xsd:element name="consultarParametrizacionReturn" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="consultarParametrizacion" type="id:consultarParametrizacionRequest"/>
+   <xsd:complexType name="consultarParametrizacionRequest">
+      <xsd:sequence>
+         <xsd:element name="idUsuarioEntidad" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+         <xsd:element name="producto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="consecutivo" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="nit" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="consultarParametrizacionesCompletasResponse" type="id:consultarParametrizacionesCompletasResponse"/>
+   <xsd:complexType name="consultarParametrizacionesCompletasResponse">
+      <xsd:sequence>
+         <xsd:element name="consultarParametrizacionesCompletasReturn" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="consultarParametrizacionesCompletas" type="id:consultarParametrizacionesCompletasRequest"/>
+   <xsd:complexType name="consultarParametrizacionesCompletasRequest">
+      <xsd:sequence>
+         <xsd:element name="idUsuarioEntidad" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+         <xsd:element name="producto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="tipoIdentificacion" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="entidad" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="indParametros" type="xsd:boolean" minOccurs="1" maxOccurs="1"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="consultarUltimoResultadoResponse" type="id:consultarUltimoResultadoResponse"/>
+   <xsd:complexType name="consultarUltimoResultadoResponse">
+      <xsd:sequence>
+         <xsd:element name="consultarUltimoResultadoReturn" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="consultarUltimoResultado" type="id:consultarUltimoResultadoRequest"/>
+   <xsd:complexType name="consultarUltimoResultadoRequest">
+      <xsd:sequence>
+         <xsd:element name="idUsuarioEntidad" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+         <xsd:element name="producto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="nit" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="tipo_identificacion" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="identificacion" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="preguntasResponse" type="id:preguntasResponse"/>
+   <xsd:complexType name="preguntasResponse">
+      <xsd:sequence>
+         <xsd:element name="preguntasReturn" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="preguntas" type="id:preguntasRequest"/>
+   <xsd:complexType name="preguntasRequest">
+      <xsd:sequence>
+         <xsd:element name="idUsuarioEntidad" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+         <xsd:element name="paramProducto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="producto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="canal" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="solicitudCuestionario" type="id:solicitudCuestionarioRequest" minOccurs="1" maxOccurs="1"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="solicitudCuestionarioRequest">
+      <xsd:sequence>
+         <xsd:element name="tipoId" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="identificacion" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="regValidacion" minOccurs="1" maxOccurs="1">
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:integer">
+                  <xsd:minExclusive value="0"/>
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="validarResponse" type="id:validarResponse"/>
+   <xsd:complexType name="validarResponse">
+      <xsd:sequence>
+         <xsd:element name="validarReturn" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="validar" type="id:validarRequest"/>
+   <xsd:complexType name="validarRequest">
+      <xsd:sequence>
+         <xsd:element name="idUsuarioEntidad" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+         <xsd:element name="paramProducto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="producto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="canal" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="datosValidacion" type="id:datosValidacionRequest" minOccurs="1" maxOccurs="1"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="datosValidacionRequest">
+      <xsd:sequence>
+         <xsd:element name="identificacion" type="id:identificacionRequest" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="primerApellido" minOccurs="1" maxOccurs="1">
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="16"/>
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element name="nombres" minOccurs="1" maxOccurs="1">
+            <xsd:simpleType>
+               <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="40"/>
+               </xsd:restriction>
+            </xsd:simpleType>
+         </xsd:element>
+         <xsd:element name="fechaExpedicion" type="id:fechaExpedicionRequest" minOccurs="1" maxOccurs="1"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="identificacionRequest">
+      <xsd:sequence>
+         <xsd:element name="numero" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="tipo" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="fechaExpedicionRequest">
+      <xsd:sequence>
+         <xsd:element name="timestamp" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="verificarResponse" type="id:verificarResponse"/>
+   <xsd:complexType name="verificarResponse">
+      <xsd:sequence>
+         <xsd:element name="verificarReturn" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="verificar" type="id:verificarRequest"/>
+   <xsd:complexType name="verificarRequest">
+      <xsd:sequence>
+         <xsd:element name="idUsuarioEntidad" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+         <xsd:element name="producto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="paramProducto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="respuestas" type="id:respuestasRequest" minOccurs="1" maxOccurs="1"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="respuestasRequest">
+      <xsd:sequence>
+         <xsd:element name="idCuestionario" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="regCuestionario" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="identificacion" type="id:identificacionRequest" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="respuesta" type="id:respuesta" minOccurs="1" maxOccurs="unbounded"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="respuesta">
+      <xsd:sequence>
+         <xsd:element name="idPregunta" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+         <xsd:element name="idRespuesta" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="Fault" final="extension">
+      <xsd:complexType>
+         <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="0" name="faultcode" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="faultstring" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="detail">
+               <xsd:complexType>
+                  <xsd:sequence>
+                     <xsd:element name="Idws2Exception" type="id:Idws2Exception" minOccurs="0" maxOccurs="1"/>
+                  </xsd:sequence>
+               </xsd:complexType>
+            </xsd:element>
+         </xsd:sequence>
+      </xsd:complexType>
+   </xsd:element>
+   <xsd:complexType name="Idws2Exception">
+      <xsd:sequence>
+         <xsd:element name="Business" type="id:Business" minOccurs="0" maxOccurs="1"/>
+         <xsd:element name="Runtime" type="id:Runtime" minOccurs="0" maxOccurs="1"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="Business">
+      <xsd:sequence>
+         <xsd:element maxOccurs="1" minOccurs="0" name="error-code" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="error-message" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="Runtime">
+      <xsd:sequence>
+         <xsd:element maxOccurs="1" minOccurs="0" name="uuid" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="device-name" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="error-code" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="error-subcode" type="xsd:string"/>
+         <xsd:element maxOccurs="1" minOccurs="0" name="error-message" type="xsd:string"/>
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>
