@@ -1,5 +1,9 @@
+E:\proyectos\2TF\experian\fuentes\experian\experian-rest\src\main\java\com\dostf\services\evidente\IEvidenteService.java
+E:\proyectos\2TF\experian\fuentes\experian\experian-rest\src\main\java\com\dostf\services\evidente\EvidenteCliente.java
+E:\proyectos\2TF\experian\fuentes\experian\experian-rest\src\main\java\com\dostf\dtos\evidente\ValidarDto.java
 E:\proyectos\2TF\experian\fuentes\experian\experian-rest\src\main\java\com\dostf\Application.java
-E:\proyectos\2TF\experian\fuentes\experian\experian-rest\src\main\java\com\dostf\evidente\services\imp\EvidenteService.java
-E:\proyectos\2TF\experian\fuentes\experian\experian-rest\src\main\java\com\dostf\evidente\dtos\ValidarDto.java
-E:\proyectos\2TF\experian\fuentes\experian\experian-rest\src\main\java\com\dostf\evidente\services\IEvidenteService.java
-E:\proyectos\2TF\experian\fuentes\experian\experian-rest\src\main\java\com\dostf\evidente\clients\IEvidenteClient.java
+E:\proyectos\2TF\experian\fuentes\experian\experian-rest\src\main\java\com\dostf\clients\IEvidenteClient.java
+E:\proyectos\2TF\experian\fuentes\experian\experian-rest\src\main\java\com\dostf\config\properties\EvidenteProperties.java
+E:\proyectos\2TF\experian\fuentes\experian\experian-rest\src\main\java\com\dostf\dtos\BaseDto.java
+E:\proyectos\2TF\experian\fuentes\experian\experian-rest\src\main\java\com\dostf\services\evidente\imp\EvidenteService.java
+E:\proyectos\2TF\experian\fuentes\experian\experian-rest\src\main\java\com\dostf\config\SwaggerConfig.java

@@ -1,0 +1,9 @@
+operaciones:
+  api:
+    urlBase: https://demo-servicesesb.datacredito.com.co
+    evidente:
+      urlEvidente: /wss/idws2/services/ServicioIdentificacionPlus
+server:
+  servlet:
+    context-path: /experian-rest
+  port: 5000

@@ -1,5 +1,9 @@
-com\dostf\evidente\clients\IEvidenteClient.class
-com\dostf\evidente\dtos\ValidarDto.class
-com\dostf\evidente\services\imp\EvidenteService.class
-com\dostf\evidente\services\IEvidenteService.class
+com\dostf\dtos\BaseDto.class
+com\dostf\services\evidente\EvidenteCliente.class
+com\dostf\config\properties\EvidenteProperties.class
+com\dostf\clients\IEvidenteClient.class
+com\dostf\dtos\evidente\ValidarDto.class
+com\dostf\config\SwaggerConfig.class
+com\dostf\services\evidente\IEvidenteService.class
+com\dostf\services\evidente\imp\EvidenteService.class
 com\dostf\Application.class
