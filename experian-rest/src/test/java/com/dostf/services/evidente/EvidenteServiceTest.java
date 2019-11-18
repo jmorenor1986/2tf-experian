@@ -1,7 +1,7 @@
 package com.dostf.services.evidente;
 
 import com.dostf.clients.IEvidenteClient;
-import com.dostf.config.properties.EvidenteProperties;
+import com.dostf.clients.imp.EvidenteCliente;
 import com.dostf.config.properties.OperacionesProperties;
 import com.dostf.dtos.BaseDto;
 import com.dostf.dtos.evidente.ValidarDto;
@@ -31,12 +31,12 @@ public class EvidenteServiceTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         evidenteService = new EvidenteService(evidenteClient);
-        evidenteClient = new EvidenteCliente(operacionesProperties,modelMapper);
+//        evidenteClient = new EvidenteCliente(operacionesProperties,modelMapper);
     }
 
     @Test
     @Ignore
     public void testValidarSuccess() {
-        Mockito.when(evidenteClient.validarIdentidad(Mockito.any())).thenReturn(Mockito.anyString());
+        //Mockito.when(evidenteClient.validarIdentidad(Mockito.any())).thenReturn(Mockito.anyString());
     }
 }
