@@ -1,5 +1,7 @@
 package com.dostf.config;
 
+import org.apache.cxf.interceptor.LoggingInInterceptor;
+import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
@@ -23,6 +25,16 @@ public class GeneralConfig {
 
     @Bean
     public Map<String, Object> propsOut() {
-        return new new HashMap<>();
+        return new HashMap<>();
+    }
+
+    @Bean
+    public LoggingOutInterceptor loggingOutInterceptor() {
+        return new LoggingOutInterceptor();
+    }
+
+    @Bean
+    public LoggingInInterceptor loggingInInterceptor() {
+        return new LoggingInInterceptor();
     }
 }
