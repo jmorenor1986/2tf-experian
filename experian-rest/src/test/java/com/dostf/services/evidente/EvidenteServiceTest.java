@@ -12,6 +12,7 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.modelmapper.ModelMapper;
 
 public class EvidenteServiceTest {
     private IEvidenteService evidenteService;
@@ -23,12 +24,14 @@ public class EvidenteServiceTest {
     private BaseDto baseDto;
     @Mock
     private OperacionesProperties operacionesProperties;
+    @Mock
+    private ModelMapper modelMapper;
 
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         evidenteService = new EvidenteService(evidenteClient);
-        evidenteClient = new EvidenteCliente(operacionesProperties);
+        evidenteClient = new EvidenteCliente(operacionesProperties,modelMapper);
     }
 
     @Test
