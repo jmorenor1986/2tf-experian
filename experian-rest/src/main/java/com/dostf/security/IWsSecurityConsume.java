@@ -1,10 +1,7 @@
 package com.dostf.security;
 
-import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
-import org.springframework.stereotype.Service;
-
-import java.util.Map;
+import org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor;
 
 public interface IWsSecurityConsume {
-    public Map<String, Object> getPropsOut();
+    public WSS4JOutInterceptor getWSS4JOutInterceptor();
 }

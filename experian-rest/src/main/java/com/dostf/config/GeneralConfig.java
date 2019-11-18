@@ -1,5 +1,6 @@
 package com.dostf.config;
 
+import org.apache.cxf.configuration.jsse.TLSClientParameters;
 import org.apache.cxf.interceptor.LoggingInInterceptor;
 import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
@@ -37,4 +38,10 @@ public class GeneralConfig {
     public LoggingInInterceptor loggingInInterceptor() {
         return new LoggingInInterceptor();
     }
+
+    @Bean
+    public TLSClientParameters tlsCP() {
+        return new TLSClientParameters();
+    }
+
 }

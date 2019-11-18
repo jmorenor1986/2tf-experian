@@ -1,17 +1,21 @@
 package com.dostf.security.imp;
 
+import co.com.datacredito.services.servicioidentificacion.v1.ServicioIdentificacion;
 import com.dostf.config.properties.WsSecurityProperties;
 import com.dostf.security.IWsSecurityConsume;
 import com.dostf.security.SignaturePwdClientCallBackHandler;
 import com.dostf.security.constants.SystemProperties;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
+import org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor;
 import org.apache.ws.security.WSConstants;
 import org.apache.ws.security.handler.WSHandlerConstants;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.Map;
 
+@Service
 public class WsSecurityConsume implements IWsSecurityConsume {
 
     private final WsSecurityProperties wsSecurityProperties;
@@ -30,9 +34,8 @@ public class WsSecurityConsume implements IWsSecurityConsume {
         setSignaturePwsClient();
     }
 
-    @Override
-    public Map<String, Object> getPropsOut() {
-        return propsOut;
+    public WSS4JOutInterceptor getWSS4JOutInterceptor() {
+        return new WSS4JOutInterceptor(propsOut);
     }
 
     private void setSystemProperty() {
@@ -62,4 +65,6 @@ public class WsSecurityConsume implements IWsSecurityConsume {
         propsOut.put(WSHandlerConstants.PASSWORD_TYPE, WSConstants.PW_TEXT);
         propsOut.put(WSHandlerConstants.PW_CALLBACK_CLASS, SignaturePwdClientCallBackHandler.class.getName());
     }
+
 }
+
