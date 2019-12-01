@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:ns0="http://www.datacredito.com.co/services/ServicioIdentificacion/v1" targetNamespace="http://www.datacredito.com.co/services/ServicioIdentificacion/v1">
+<wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema>
+<xsd:import schemaLocation="ServicioIdentificacionPlus.xsd2.xsd" namespace="http://ws.id.dc.com/v1"/></xsd:schema></wsdl:types>
+<wsdl:message name="consultarParametrizacionesCompletasRequest">
+<wsdl:part name="parameters" element="xsns:consultarParametrizacionesCompletas" xmlns:xsns="http://ws.id.dc.com/v1"/></wsdl:message>
+<wsdl:message name="consultarParametrizacionesCompletasResponse">
+<wsdl:part name="parameters" element="xsns:consultarParametrizacionesCompletasResponse" xmlns:xsns="http://ws.id.dc.com/v1"/></wsdl:message>
+<wsdl:message name="consultarParametrizacionRequest">
+<wsdl:part name="parameters" element="xsns:consultarParametrizacion" xmlns:xsns="http://ws.id.dc.com/v1"/></wsdl:message>
+<wsdl:message name="consultarParametrizacionResponse">
+<wsdl:part name="parameters" element="xsns:consultarParametrizacionResponse" xmlns:xsns="http://ws.id.dc.com/v1"/></wsdl:message>
+<wsdl:message name="consultarUltimoResultadoRequest">
+<wsdl:part name="parameters" element="xsns:consultarUltimoResultado" xmlns:xsns="http://ws.id.dc.com/v1"/></wsdl:message>
+<wsdl:message name="consultarUltimoResultadoResponse">
+<wsdl:part name="parameters" element="xsns:consultarUltimoResultadoResponse" xmlns:xsns="http://ws.id.dc.com/v1"/></wsdl:message>
+<wsdl:message name="Idws2Exception">
+<wsdl:part name="Fault" element="xsns:Fault" xmlns:xsns="http://ws.id.dc.com/v1"/></wsdl:message>
+<wsdl:message name="preguntasRequest">
+<wsdl:part name="parameters" element="xsns:preguntas" xmlns:xsns="http://ws.id.dc.com/v1"/></wsdl:message>
+<wsdl:message name="preguntasResponse">
+<wsdl:part name="parameters" element="xsns:preguntasResponse" xmlns:xsns="http://ws.id.dc.com/v1"/></wsdl:message>
+<wsdl:message name="validarRequest">
+<wsdl:part name="parameters" element="xsns:validar" xmlns:xsns="http://ws.id.dc.com/v1"/></wsdl:message>
+<wsdl:message name="validarResponse">
+<wsdl:part name="parameters" element="xsns:validarResponse" xmlns:xsns="http://ws.id.dc.com/v1"/></wsdl:message>
+<wsdl:message name="verificarRequest">
+<wsdl:part name="parameters" element="xsns:verificar" xmlns:xsns="http://ws.id.dc.com/v1"/></wsdl:message>
+<wsdl:message name="verificarResponse">
+<wsdl:part name="parameters" element="xsns:verificarResponse" xmlns:xsns="http://ws.id.dc.com/v1"/></wsdl:message>
+<wsdl:portType name="ServicioIdentificacion">
+<wsdl:operation name="consultarParametrizacion">
+<wsdl:input name="consultarParametrizacionRequest" message="ns0:consultarParametrizacionRequest"/>
+<wsdl:output name="consultarParametrizacionResponse" message="ns0:consultarParametrizacionResponse"/>
+<wsdl:fault name="Idws2Exception" message="ns0:Idws2Exception"/></wsdl:operation>
+<wsdl:operation name="consultarParametrizacionesCompletas">
+<wsdl:input name="consultarParametrizacionesCompletasRequest" message="ns0:consultarParametrizacionesCompletasRequest"/>
+<wsdl:output name="consultarParametrizacionesCompletasResponse" message="ns0:consultarParametrizacionesCompletasResponse"/>
+<wsdl:fault name="Idws2Exception" message="ns0:Idws2Exception"/></wsdl:operation>
+<wsdl:operation name="consultarUltimoResultado">
+<wsdl:input name="consultarUltimoResultadoRequest" message="ns0:consultarUltimoResultadoRequest"/>
+<wsdl:output name="consultarUltimoResultadoResponse" message="ns0:consultarUltimoResultadoResponse"/>
+<wsdl:fault name="Idws2Exception" message="ns0:Idws2Exception"/></wsdl:operation>
+<wsdl:operation name="preguntas">
+<wsdl:input name="preguntasRequest" message="ns0:preguntasRequest"/>
+<wsdl:output name="preguntasResponse" message="ns0:preguntasResponse"/>
+<wsdl:fault name="Idws2Exception" message="ns0:Idws2Exception"/></wsdl:operation>
+<wsdl:operation name="validar">
+<wsdl:input name="validarRequest" message="ns0:validarRequest"/>
+<wsdl:output name="validarResponse" message="ns0:validarResponse"/>
+<wsdl:fault name="Idws2Exception" message="ns0:Idws2Exception"/></wsdl:operation>
+<wsdl:operation name="verificar">
+<wsdl:input name="verificarRequest" message="ns0:verificarRequest"/>
+<wsdl:output name="verificarResponse" message="ns0:verificarResponse"/>
+<wsdl:fault name="Idws2Exception" message="ns0:Idws2Exception"/></wsdl:operation></wsdl:portType>
+<wsdl:binding name="ServicioIdentificacionSoapBinding" type="ns0:ServicioIdentificacion">
+<soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<wsdl:operation name="consultarParametrizacion">
+<soap11:operation soapAction="" style="document"/>
+<wsdl:input name="consultarParametrizacionRequest">
+<soap11:body use="literal"/></wsdl:input>
+<wsdl:output name="consultarParametrizacionResponse">
+<soap11:body use="literal"/></wsdl:output>
+<wsdl:fault name="Idws2Exception">
+<soap11:fault name="Idws2Exception" use="literal"/></wsdl:fault></wsdl:operation>
+<wsdl:operation name="consultarParametrizacionesCompletas">
+<soap11:operation soapAction="" style="document"/>
+<wsdl:input name="consultarParametrizacionesCompletasRequest">
+<soap11:body use="literal"/></wsdl:input>
+<wsdl:output name="consultarParametrizacionesCompletasResponse">
+<soap11:body use="literal"/></wsdl:output>
+<wsdl:fault name="Idws2Exception">
+<soap11:fault name="Idws2Exception" use="literal"/></wsdl:fault></wsdl:operation>
+<wsdl:operation name="consultarUltimoResultado">
+<soap11:operation soapAction="" style="document"/>
+<wsdl:input name="consultarUltimoResultadoRequest">
+<soap11:body use="literal"/></wsdl:input>
+<wsdl:output name="consultarUltimoResultadoResponse">
+<soap11:body use="literal"/></wsdl:output>
+<wsdl:fault name="Idws2Exception">
+<soap11:fault name="Idws2Exception" use="literal"/></wsdl:fault></wsdl:operation>
+<wsdl:operation name="preguntas">
+<soap11:operation soapAction="" style="document"/>
+<wsdl:input name="preguntasRequest">
+<soap11:body use="literal"/></wsdl:input>
+<wsdl:output name="preguntasResponse">
+<soap11:body use="literal"/></wsdl:output>
+<wsdl:fault name="Idws2Exception">
+<soap11:fault name="Idws2Exception" use="literal"/></wsdl:fault></wsdl:operation>
+<wsdl:operation name="validar">
+<soap11:operation soapAction="" style="document"/>
+<wsdl:input name="validarRequest">
+<soap11:body use="literal"/></wsdl:input>
+<wsdl:output name="validarResponse">
+<soap11:body use="literal"/></wsdl:output>
+<wsdl:fault name="Idws2Exception">
+<soap11:fault name="Idws2Exception" use="literal"/></wsdl:fault></wsdl:operation>
+<wsdl:operation name="verificar">
+<soap11:operation soapAction="" style="document"/>
+<wsdl:input name="verificarRequest">
+<soap11:body use="literal"/></wsdl:input>
+<wsdl:output name="verificarResponse">
+<soap11:body use="literal"/></wsdl:output>
+<wsdl:fault name="Idws2Exception">
+<soap11:fault name="Idws2Exception" use="literal"/></wsdl:fault></wsdl:operation></wsdl:binding>
+<wsdl:service name="ServicioIdentificacionPlus">
+<wsdl:port name="ServicioIdentificacionPlus" binding="ns0:ServicioIdentificacionSoapBinding">
+<soap11:address location="http://10.54.8.26:8080/idws2/services/ServicioIdentificacionPlus"/></wsdl:port>
+<wsdl:port name="ServicioIdentificacionPlus.dmz.https" binding="ns0:ServicioIdentificacionSoapBinding">
+<soap11:address location="https://10.54.8.25:443/wss/idws2/services/ServicioIdentificacionPlus"/></wsdl:port>
+<wsdl:port name="ServicioIdentificacionPlus.wan.https" binding="ns0:ServicioIdentificacionSoapBinding">
+<soap11:address location="https://10.54.8.26:443/idws2/services/ServicioIdentificacionPlus"/></wsdl:port></wsdl:service></wsdl:definitions>
