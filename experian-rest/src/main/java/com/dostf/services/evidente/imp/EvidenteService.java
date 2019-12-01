@@ -19,6 +19,7 @@ public class EvidenteService implements IEvidenteService {
 
     @Override
     public String validarIdentidad(ValidarDto validarDto) throws Idws2Exception {
+        validarDto.validateMandatoryField();
         return evidenteClient.validarIdentidad(validarDto);
     }
 }
