@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EvidenteCliente implements IEvidenteClient {
+public class EvidenteClient implements IEvidenteClient {
     private final ModelMapper modelMapper;
     private final OperacionesProperties operacionesProperties;
     private final EvidenteProperties evidenteProperties;
@@ -26,7 +26,7 @@ public class EvidenteCliente implements IEvidenteClient {
     }
 
     @Autowired
-    public EvidenteCliente(OperacionesProperties operacionesProperties, ModelMapper modelMapper) {
+    public EvidenteClient(OperacionesProperties operacionesProperties, ModelMapper modelMapper) {
         this.modelMapper = modelMapper;
         this.operacionesProperties = operacionesProperties;
         this.evidenteProperties = operacionesProperties.getEvidenteProperties();

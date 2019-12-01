@@ -26,10 +26,6 @@ public class EvidenteServiceTest {
     @Mock
     private BaseDto baseDto;
     @Mock
-    private OperacionesProperties operacionesProperties;
-    @Mock
-    private ModelMapper modelMapper;
-    @Mock
     private IdentificacionRequest identificacionRequest;
 
     @Before
