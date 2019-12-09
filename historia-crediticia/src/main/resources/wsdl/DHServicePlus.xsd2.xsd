@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:hc2="http://ws.hc2.dc.com/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ws.hc2.dc.com/v1" attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0">
+	
+<xsd:element name="consultarHC2Response" type="hc2:consultarHC2Response"/>
+	
+<xsd:complexType name="consultarHC2Response">
+		
+<xsd:sequence>
+			
+<xsd:element name="consultarHC2Return" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+<xsd:complexType name="consultarHC2PJResponse">
+		
+<xsd:sequence>
+			
+<xsd:element name="consultarHC2PJReturn" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+<xsd:element name="consultarHC2" type="hc2:historiaCreditoPlus"/>
+	
+<xsd:complexType name="historiaCreditoPlus">
+		
+<xsd:sequence>
+			
+<xsd:element name="solicitud" type="hc2:solicitudPlus" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+<xsd:complexType name="solicitudPlus">
+		
+<xsd:sequence>
+			
+<xsd:element name="clave" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			
+<xsd:element name="identificacion" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			
+<xsd:element name="primerApellido" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			
+<xsd:element name="producto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			
+<xsd:element name="tipoIdentificacion" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			
+<xsd:element name="usuario" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			
+<xsd:element name="parametros" type="hc2:parametros" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+<xsd:complexType name="parametros">
+		
+<xsd:sequence>
+			
+<xsd:element name="parametro" type="hc2:parametro" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+<xsd:complexType name="parametro">
+		
+<xsd:sequence>
+			
+<xsd:element name="tipo" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			
+<xsd:element name="nombre" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			
+<xsd:element name="valor" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	
+<xsd:element name="consultarHC2PJ" type="hc2:historiaCreditoPlusPJ"/>
+	
+<xsd:complexType name="historiaCreditoPlusPJ">
+		
+<xsd:sequence>
+			
+<xsd:element name="solicitud" type="hc2:solicitudPlus" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+<xsd:element name="consultarHC2PJResponse" type="hc2:consultarHC2PJResponse"/>
+
+	
+<xsd:element name="Fault" final="extension">
+		
+<xsd:complexType>
+			
+<xsd:sequence>
+				
+<xsd:element maxOccurs="1" minOccurs="0" name="faultcode" type="xsd:string"/>
+				
+<xsd:element maxOccurs="1" minOccurs="0" name="faultstring" type="xsd:string"/>
+				
+<xsd:element maxOccurs="1" minOccurs="0" name="detail">
+				   	 
+<xsd:complexType>
+						
+<xsd:sequence>
+							
+<xsd:element name="HC2PNJException" type="hc2:HC2PNJException" minOccurs="0" maxOccurs="1"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+<xsd:complexType name="HC2PNJException">
+		
+<xsd:sequence>
+			
+<xsd:element name="Business" type="hc2:Business" minOccurs="0" maxOccurs="1"/>
+			
+<xsd:element name="Runtime" type="hc2:Runtime" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+<xsd:complexType name="Business">
+		
+<xsd:sequence>
+			
+<xsd:element maxOccurs="1" minOccurs="0" name="error-code" type="xsd:string"/>
+			
+<xsd:element maxOccurs="1" minOccurs="0" name="error-message" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+<xsd:complexType name="Runtime">
+		
+<xsd:sequence>
+			
+<xsd:element maxOccurs="1" minOccurs="0" name="uuid" type="xsd:string"/>
+			
+<xsd:element maxOccurs="1" minOccurs="0" name="device-name" type="xsd:string"/>
+			
+<xsd:element maxOccurs="1" minOccurs="0" name="error-code" type="xsd:string"/>
+			
+<xsd:element maxOccurs="1" minOccurs="0" name="error-subcode" type="xsd:string"/>
+			
+<xsd:element maxOccurs="1" minOccurs="0" name="error-message" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
