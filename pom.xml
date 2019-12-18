@@ -10,6 +10,7 @@
     <modules>
         <module>experian-evidente</module>
         <module>experian-rest</module>
+        <module>historia-crediticia</module>
     </modules>
     <name>experian</name>
     <description>service to consume services soap from experian</description>
