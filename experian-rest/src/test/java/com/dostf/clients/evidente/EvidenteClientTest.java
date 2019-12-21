@@ -19,6 +19,7 @@ import org.modelmapper.ModelMapper;
 
 public class EvidenteClientTest {
     private IEvidenteClient evidenteClient;
+
     private static final String EXPECTED_RESULT = "{\"result\": \"result\"}";
     @Mock
     private OperacionesProperties operacionesProperties;
@@ -47,7 +48,6 @@ public class EvidenteClientTest {
         Mockito.when(port.getPort().validar("", "", "", "", datosValidacionRequest)).thenReturn(EXPECTED_RESULT);
         String result = evidenteClient.validarIdentidad(Mockito.any());
         Assert.assertNotNull(result);
-
     }
 
 }
