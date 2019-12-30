@@ -6,6 +6,7 @@ import com.dostf.clients.IEvidenteClient;
 import com.dostf.clients.imp.EvidenteClient;
 import com.dostf.config.properties.EvidenteProperties;
 import com.dostf.config.properties.OperacionesProperties;
+import com.dostf.dtos.evidente.PreguntasDto;
 import com.dostf.dtos.evidente.ValidarDto;
 import com.dostf.security.identificacion.imp.SecurityIdentificacion;
 import org.junit.Assert;
@@ -33,6 +34,8 @@ public class EvidenteClientTest {
     private DatosValidacionRequest datosValidacionRequest;
     @Mock
     private ValidarDto validarDto;
+    @Mock
+    private PreguntasDto preguntasDto;
 
     @Before
     public void setUp() {
@@ -49,5 +52,11 @@ public class EvidenteClientTest {
         String result = evidenteClient.validarIdentidad(Mockito.any());
         Assert.assertNotNull(result);
     }
+
+    @Test
+    public void testPreguntasOk() {
+
+    }
+
 
 }

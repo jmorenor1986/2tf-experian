@@ -4,6 +4,7 @@ import co.com.datacredito.services.servicioidentificacion.v1.Idws2Exception;
 import com.dostf.controllers.EvidenteController;
 import com.dostf.services.evidente.IEvidenteService;
 import com.dostf.services.evidente.imp.EvidenteService;
+import org.json.JSONException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,7 +25,7 @@ public class EvidenteControllerTest {
     }
 
     @Test
-    public void testValidarIdentificacionSucess() throws Idws2Exception {
+    public void testValidarIdentificacionSucess() throws Idws2Exception, JSONException {
         Mockito.when(evidenteService.validarIdentidad(Mockito.any())).thenReturn(EXPECTED_RESULT);
         String result = evidenteController.validar(null);
         Assert.assertNotNull(result);

@@ -1,15 +1,14 @@
 package com.dostf.security.imp;
 
-import co.com.datacredito.services.servicioidentificacion.v1.ServicioIdentificacion;
 import com.dostf.config.properties.WsSecurityProperties;
 import com.dostf.security.IWsSecurityConsume;
 import com.dostf.security.SignaturePwdClientCallBackHandler;
 import com.dostf.security.constants.SystemProperties;
-import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor;
 import org.apache.ws.security.WSConstants;
 import org.apache.ws.security.handler.WSHandlerConstants;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
