@@ -24,4 +24,5 @@ public class PreguntasDto {
         this.identificacion = identificacion;
         this.regValidacion = regValidacion;
     }
+
 }
