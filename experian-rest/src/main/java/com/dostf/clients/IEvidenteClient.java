@@ -11,5 +11,5 @@ public interface IEvidenteClient {
 
     public String consultarParametrizacion(ParametrizacionDto parametrizacionDto) throws Idws2Exception;
 
-    public String consultarPreguntas(PreguntasDto preguntasDto);
+    public String consultarPreguntas(PreguntasDto preguntasDto) throws Idws2Exception;
 }

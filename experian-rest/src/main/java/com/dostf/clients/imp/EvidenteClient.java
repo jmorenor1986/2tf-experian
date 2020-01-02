@@ -1,5 +1,6 @@
 package com.dostf.clients.imp;
 
+import com.dc.id.ws.v1.SolicitudCuestionarioRequest;
 import com.dostf.dtos.evidente.PreguntasDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +52,9 @@ public class EvidenteClient implements IEvidenteClient {
 
     @Override
     public String consultarPreguntas(PreguntasDto preguntasDto) {
-        return null;
+        return port.getPort().preguntas(evidenteProperties.getIdUsuarioEntidad(), evidenteProperties.getParamProducto()
+                , evidenteProperties.getProducto(), evidenteProperties.getCanal(),
+                modelMapper.map(preguntasDto, SolicitudCuestionarioRequest.class));
     }
 
 }
