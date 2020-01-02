@@ -6,8 +6,12 @@ import com.dostf.common.exception.MandatoryFieldException;
 import com.dostf.config.StringUtilities;
 import com.dostf.dtos.BaseDto;
 import com.dostf.dtos.evidente.IdentificacionRequest;
+import com.dostf.dtos.evidente.PreguntasDto;
 import com.dostf.dtos.evidente.ValidarDto;
+import com.dostf.dtos.evidente.validators.PreguntasValidator;
 import com.dostf.services.evidente.imp.EvidenteService;
+import io.vavr.collection.Seq;
+import io.vavr.control.Validation;
 import org.json.JSONException;
 import org.junit.Assert;
 import org.junit.Before;
@@ -23,17 +27,24 @@ public class EvidenteServiceTest {
     private IEvidenteClient evidenteClient;
     @Mock
     private ValidarDto validarDto;
+
+    @Mock
+    private PreguntasDto preguntasDto;
     @Mock
     private BaseDto baseDto;
     @Mock
     private IdentificacionRequest identificacionRequest;
     @Mock
     private StringUtilities stringUtilities;
+    @Mock
+    private PreguntasValidator preguntasValidator;
+    @Mock
+    Validation<Seq<String>, PreguntasDto> seqPreguntasDtoValidation;
 
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        evidenteService = new EvidenteService(evidenteClient,stringUtilities);
+        evidenteService = new EvidenteService(evidenteClient, stringUtilities);
     }
 
     @Test
@@ -74,6 +85,15 @@ public class EvidenteServiceTest {
         ValidarDto validarDto = new ValidarDto();
         Mockito.doNothing().when(identificacionRequest).validateMandatoryField();
         evidenteService.validarIdentidad(validarDto);
+    }
+
+    @Test
+    public void testValidarConsultaPreguntaSuccess() throws Idws2Exception, JSONException {
+        Mockito.when(preguntasValidator.validateObject(preguntasDto)).thenReturn(seqPreguntasDtoValidation);
+        Mockito.when(evidenteClient.consultarPreguntas(preguntasDto)).thenReturn(EXPECTED_RESULT);
+        Mockito.when(stringUtilities.xmlToJson(Mockito.anyString())).thenReturn(EXPECTED_RESULT);
+        String result = evidenteService.consultarPreguntas(preguntasDto);
+        Assert.assertNotNull(result);
     }
 
 

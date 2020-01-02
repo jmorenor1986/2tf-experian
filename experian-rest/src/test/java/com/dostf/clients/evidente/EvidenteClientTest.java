@@ -12,6 +12,8 @@ import com.dostf.dtos.evidente.PreguntasDto;
 import com.dostf.dtos.evidente.ValidarDto;
 import com.dostf.dtos.evidente.validators.PreguntasValidator;
 import com.dostf.security.identificacion.imp.SecurityIdentificacion;
+import io.vavr.collection.Seq;
+import io.vavr.control.Validation;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -43,6 +45,8 @@ public class EvidenteClientTest {
     private PreguntasDto preguntasDto;
     @Mock
     private PreguntasValidator preguntasValidator;
+    @Mock
+    private Validation<Seq<String>, PreguntasDto> seqPreguntasDtoValidation;
 
     @Before
     public void setUp() {
@@ -64,9 +68,9 @@ public class EvidenteClientTest {
     @Test
     public void testPreguntasOk() throws Idws2Exception {
         Mockito.when(modelMapper.map(preguntasDto, SolicitudCuestionarioRequest.class)).thenReturn(solicitudCuestionarioRequest);
-        Mockito.when(preguntasValidator.validateObject(preguntasDto).isValid()).thenReturn(true);
+        Mockito.when(preguntasValidator.validateObject(preguntasDto)).thenReturn(seqPreguntasDtoValidation);
         Mockito.when(port.getPort()
-                .preguntas("", "", "", "", solicitudCuestionarioRequest))
+                .preguntas(Mockito.eq(""), Mockito.eq(""), Mockito.eq(""), Mockito.eq(""), solicitudCuestionarioRequest))
                 .thenReturn(EXPECTED_RESULT);
         String result = evidenteClient.consultarPreguntas(preguntasDto);
         Assert.assertNotNull(result);

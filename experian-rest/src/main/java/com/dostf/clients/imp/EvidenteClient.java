@@ -51,7 +51,7 @@ public class EvidenteClient implements IEvidenteClient {
     }
 
     @Override
-    public String consultarPreguntas(PreguntasDto preguntasDto) {
+    public String consultarPreguntas(PreguntasDto preguntasDto) throws Idws2Exception {
         return port.getPort().preguntas(evidenteProperties.getIdUsuarioEntidad(), evidenteProperties.getParamProducto()
                 , evidenteProperties.getProducto(), evidenteProperties.getCanal(),
                 modelMapper.map(preguntasDto, SolicitudCuestionarioRequest.class));
