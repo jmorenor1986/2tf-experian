@@ -55,7 +55,7 @@ public class EvidenteClientTest {
 
     @Test
     public void testPreguntasOk() {
-
+        String result = evidenteClient.consultarPreguntas();
     }
 
 

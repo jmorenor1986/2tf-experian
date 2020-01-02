@@ -39,6 +39,7 @@ public class EvidenteServiceTest {
     @Test
     public void testValidarSuccess() throws Idws2Exception, JSONException {
         Mockito.doNothing().when(validarDto).validateMandatoryField();
+        Mockito.when(stringUtilities.xmlToJson(Mockito.anyString())).thenReturn(EXPECTED_RESULT);
         Mockito.when(evidenteClient.validarIdentidad(validarDto)).thenReturn(EXPECTED_RESULT);
         Mockito.when(evidenteService.validarIdentidad(validarDto)).thenReturn(EXPECTED_RESULT);
         String result = evidenteService.validarIdentidad(validarDto);
