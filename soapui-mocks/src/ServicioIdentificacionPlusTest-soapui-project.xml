@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="231a8870-0543-49b3-8cd8-2deb3b476f9b" activeEnvironment="Default" name="ServicioIdentificacionPlusTest" resourceRoot="" soapui-version="5.4.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="fab5249c-9189-426a-b697-5fed90a06682" wsaVersion="NONE" name="ServicioIdentificacionSoapBinding" type="wsdl" bindingName="{http://www.datacredito.com.co/services/ServicioIdentificacion/v1}ServicioIdentificacionSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/E:/proyectos/2TF/experian/fuentes/experian/experian-evidente/src/main/resources/wsdl/ServicioIdentificacionPlus.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\E:\proyectos\2TF\experian\fuentes\experian\experian-evidente\src\main\resources\wsdl\ServicioIdentificacionPlus.wsdl"><con:part><con:url>file:\E:\proyectos\2TF\experian\fuentes\experian\experian-evidente\src\main\resources\wsdl\ServicioIdentificacionPlus.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.datacredito.com.co/services/ServicioIdentificacion/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:ns0="http://www.datacredito.com.co/services/ServicioIdentificacion/v1">
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="ServicioIdentificacionPlus.xsd2.xsd" namespace="http://ws.id.dc.com/v1"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="consultarParametrizacionesCompletasRequest">
+    <wsdl:part name="parameters" element="xsns:consultarParametrizacionesCompletas" xmlns:xsns="http://ws.id.dc.com/v1"/>
+  </wsdl:message>
+  <wsdl:message name="consultarParametrizacionesCompletasResponse">
+    <wsdl:part name="parameters" element="xsns:consultarParametrizacionesCompletasResponse" xmlns:xsns="http://ws.id.dc.com/v1"/>
+  </wsdl:message>
+  <wsdl:message name="consultarParametrizacionRequest">
+    <wsdl:part name="parameters" element="xsns:consultarParametrizacion" xmlns:xsns="http://ws.id.dc.com/v1"/>
+  </wsdl:message>
+  <wsdl:message name="consultarParametrizacionResponse">
+    <wsdl:part name="parameters" element="xsns:consultarParametrizacionResponse" xmlns:xsns="http://ws.id.dc.com/v1"/>
+  </wsdl:message>
+  <wsdl:message name="consultarUltimoResultadoRequest">
+    <wsdl:part name="parameters" element="xsns:consultarUltimoResultado" xmlns:xsns="http://ws.id.dc.com/v1"/>
+  </wsdl:message>
+  <wsdl:message name="consultarUltimoResultadoResponse">
+    <wsdl:part name="parameters" element="xsns:consultarUltimoResultadoResponse" xmlns:xsns="http://ws.id.dc.com/v1"/>
+  </wsdl:message>
+  <wsdl:message name="Idws2Exception">
+    <wsdl:part name="Fault" element="xsns:Fault" xmlns:xsns="http://ws.id.dc.com/v1"/>
+  </wsdl:message>
+  <wsdl:message name="preguntasRequest">
+    <wsdl:part name="parameters" element="xsns:preguntas" xmlns:xsns="http://ws.id.dc.com/v1"/>
+  </wsdl:message>
+  <wsdl:message name="preguntasResponse">
+    <wsdl:part name="parameters" element="xsns:preguntasResponse" xmlns:xsns="http://ws.id.dc.com/v1"/>
+  </wsdl:message>
+  <wsdl:message name="validarRequest">
+    <wsdl:part name="parameters" element="xsns:validar" xmlns:xsns="http://ws.id.dc.com/v1"/>
+  </wsdl:message>
+  <wsdl:message name="validarResponse">
+    <wsdl:part name="parameters" element="xsns:validarResponse" xmlns:xsns="http://ws.id.dc.com/v1"/>
+  </wsdl:message>
+  <wsdl:message name="verificarRequest">
+    <wsdl:part name="parameters" element="xsns:verificar" xmlns:xsns="http://ws.id.dc.com/v1"/>
+  </wsdl:message>
+  <wsdl:message name="verificarResponse">
+    <wsdl:part name="parameters" element="xsns:verificarResponse" xmlns:xsns="http://ws.id.dc.com/v1"/>
+  </wsdl:message>
+  <wsdl:portType name="ServicioIdentificacion">
+    <wsdl:operation name="consultarParametrizacion">
+      <wsdl:input name="consultarParametrizacionRequest" message="ns0:consultarParametrizacionRequest"/>
+      <wsdl:output name="consultarParametrizacionResponse" message="ns0:consultarParametrizacionResponse"/>
+      <wsdl:fault name="Idws2Exception" message="ns0:Idws2Exception"/>
+    </wsdl:operation>
+    <wsdl:operation name="consultarParametrizacionesCompletas">
+      <wsdl:input name="consultarParametrizacionesCompletasRequest" message="ns0:consultarParametrizacionesCompletasRequest"/>
+      <wsdl:output name="consultarParametrizacionesCompletasResponse" message="ns0:consultarParametrizacionesCompletasResponse"/>
+      <wsdl:fault name="Idws2Exception" message="ns0:Idws2Exception"/>
+    </wsdl:operation>
+    <wsdl:operation name="consultarUltimoResultado">
+      <wsdl:input name="consultarUltimoResultadoRequest" message="ns0:consultarUltimoResultadoRequest"/>
+      <wsdl:output name="consultarUltimoResultadoResponse" message="ns0:consultarUltimoResultadoResponse"/>
+      <wsdl:fault name="Idws2Exception" message="ns0:Idws2Exception"/>
+    </wsdl:operation>
+    <wsdl:operation name="preguntas">
+      <wsdl:input name="preguntasRequest" message="ns0:preguntasRequest"/>
+      <wsdl:output name="preguntasResponse" message="ns0:preguntasResponse"/>
+      <wsdl:fault name="Idws2Exception" message="ns0:Idws2Exception"/>
+    </wsdl:operation>
+    <wsdl:operation name="validar">
+      <wsdl:input name="validarRequest" message="ns0:validarRequest"/>
+      <wsdl:output name="validarResponse" message="ns0:validarResponse"/>
+      <wsdl:fault name="Idws2Exception" message="ns0:Idws2Exception"/>
+    </wsdl:operation>
+    <wsdl:operation name="verificar">
+      <wsdl:input name="verificarRequest" message="ns0:verificarRequest"/>
+      <wsdl:output name="verificarResponse" message="ns0:verificarResponse"/>
+      <wsdl:fault name="Idws2Exception" message="ns0:Idws2Exception"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioIdentificacionSoapBinding" type="ns0:ServicioIdentificacion">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="consultarParametrizacion">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarParametrizacionRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarParametrizacionResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Idws2Exception">
+        <soap11:fault name="Idws2Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarParametrizacionesCompletas">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarParametrizacionesCompletasRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarParametrizacionesCompletasResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Idws2Exception">
+        <soap11:fault name="Idws2Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarUltimoResultado">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarUltimoResultadoRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarUltimoResultadoResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Idws2Exception">
+        <soap11:fault name="Idws2Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="preguntas">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="preguntasRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="preguntasResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Idws2Exception">
+        <soap11:fault name="Idws2Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validar">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="validarRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="validarResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Idws2Exception">
+        <soap11:fault name="Idws2Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="verificar">
+      <soap11:operation soapAction="" style="document"/>
+      <wsdl:input name="verificarRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="verificarResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Idws2Exception">
+        <soap11:fault name="Idws2Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioIdentificacionPlus">
+    <wsdl:port name="ServicioIdentificacionPlus" binding="ns0:ServicioIdentificacionSoapBinding">
+      <soap11:address location="http://10.54.8.26:8080/idws2/services/ServicioIdentificacionPlus"/>
+    </wsdl:port>
+    <wsdl:port name="ServicioIdentificacionPlus.dmz.https" binding="ns0:ServicioIdentificacionSoapBinding">
+      <soap11:address location="https://10.54.8.25:443/wss/idws2/services/ServicioIdentificacionPlus"/>
+    </wsdl:port>
+    <wsdl:port name="ServicioIdentificacionPlus.wan.https" binding="ns0:ServicioIdentificacionSoapBinding">
+      <soap11:address location="https://10.54.8.26:443/idws2/services/ServicioIdentificacionPlus"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\E:\proyectos\2TF\experian\fuentes\experian\experian-evidente\src\main\resources\wsdl\ServicioIdentificacionPlus.xsd2.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://ws.id.dc.com/v1" attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:id="http://ws.id.dc.com/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="consultarParametrizacionResponse" type="id:consultarParametrizacionResponse"/>
+  <xsd:complexType name="consultarParametrizacionResponse">
+    <xsd:sequence>
+      <xsd:element name="consultarParametrizacionReturn" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="consultarParametrizacion" type="id:consultarParametrizacionRequest"/>
+  <xsd:complexType name="consultarParametrizacionRequest">
+    <xsd:sequence>
+      <xsd:element name="idUsuarioEntidad" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="producto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="consecutivo" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="nit" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="consultarParametrizacionesCompletasResponse" type="id:consultarParametrizacionesCompletasResponse"/>
+  <xsd:complexType name="consultarParametrizacionesCompletasResponse">
+    <xsd:sequence>
+      <xsd:element name="consultarParametrizacionesCompletasReturn" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="consultarParametrizacionesCompletas" type="id:consultarParametrizacionesCompletasRequest"/>
+  <xsd:complexType name="consultarParametrizacionesCompletasRequest">
+    <xsd:sequence>
+      <xsd:element name="idUsuarioEntidad" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="producto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="tipoIdentificacion" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="entidad" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="indParametros" type="xsd:boolean" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="consultarUltimoResultadoResponse" type="id:consultarUltimoResultadoResponse"/>
+  <xsd:complexType name="consultarUltimoResultadoResponse">
+    <xsd:sequence>
+      <xsd:element name="consultarUltimoResultadoReturn" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="consultarUltimoResultado" type="id:consultarUltimoResultadoRequest"/>
+  <xsd:complexType name="consultarUltimoResultadoRequest">
+    <xsd:sequence>
+      <xsd:element name="idUsuarioEntidad" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="producto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="nit" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="tipo_identificacion" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="identificacion" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="preguntasResponse" type="id:preguntasResponse"/>
+  <xsd:complexType name="preguntasResponse">
+    <xsd:sequence>
+      <xsd:element name="preguntasReturn" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="preguntas" type="id:preguntasRequest"/>
+  <xsd:complexType name="preguntasRequest">
+    <xsd:sequence>
+      <xsd:element name="idUsuarioEntidad" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="paramProducto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="producto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="canal" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="solicitudCuestionario" type="id:solicitudCuestionarioRequest" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="solicitudCuestionarioRequest">
+    <xsd:sequence>
+      <xsd:element name="tipoId" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="identificacion" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="regValidacion" minOccurs="1" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:minExclusive value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="validarResponse" type="id:validarResponse"/>
+  <xsd:complexType name="validarResponse">
+    <xsd:sequence>
+      <xsd:element name="validarReturn" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="validar" type="id:validarRequest"/>
+  <xsd:complexType name="validarRequest">
+    <xsd:sequence>
+      <xsd:element name="idUsuarioEntidad" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="paramProducto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="producto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="canal" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="datosValidacion" type="id:datosValidacionRequest" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="datosValidacionRequest">
+    <xsd:sequence>
+      <xsd:element name="identificacion" type="id:identificacionRequest" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="primerApellido" minOccurs="1" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="16"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="nombres" minOccurs="1" maxOccurs="1">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="40"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="fechaExpedicion" type="id:fechaExpedicionRequest" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="identificacionRequest">
+    <xsd:sequence>
+      <xsd:element name="numero" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="tipo" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="fechaExpedicionRequest">
+    <xsd:sequence>
+      <xsd:element name="timestamp" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="verificarResponse" type="id:verificarResponse"/>
+  <xsd:complexType name="verificarResponse">
+    <xsd:sequence>
+      <xsd:element name="verificarReturn" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="verificar" type="id:verificarRequest"/>
+  <xsd:complexType name="verificarRequest">
+    <xsd:sequence>
+      <xsd:element name="idUsuarioEntidad" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="producto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="paramProducto" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="respuestas" type="id:respuestasRequest" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="respuestasRequest">
+    <xsd:sequence>
+      <xsd:element name="idCuestionario" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="regCuestionario" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="identificacion" type="id:identificacionRequest" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="respuesta" type="id:respuesta" minOccurs="1" maxOccurs="unbounded"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="respuesta">
+    <xsd:sequence>
+      <xsd:element name="idPregunta" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+      <xsd:element name="idRespuesta" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Fault" final="extension">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element maxOccurs="1" minOccurs="0" name="faultcode" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="faultstring" type="xsd:string"/>
+        <xsd:element maxOccurs="1" minOccurs="0" name="detail">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Idws2Exception" type="id:Idws2Exception" minOccurs="0" maxOccurs="1"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="Idws2Exception">
+    <xsd:sequence>
+      <xsd:element name="Business" type="id:Business" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="Runtime" type="id:Runtime" minOccurs="0" maxOccurs="1"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Business">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="error-code" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="error-message" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Runtime">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="uuid" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="device-name" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="error-code" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="error-subcode" type="xsd:string"/>
+      <xsd:element maxOccurs="1" minOccurs="0" name="error-message" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.54.8.26:8080/idws2/services/ServicioIdentificacionPlus</con:endpoint><con:endpoint>http://LAPTOP-0Q17Q5F2:8088/wss/idws2/services/ServicioIdentificacionPlus</con:endpoint><con:endpoint>https://10.54.8.25:443/wss/idws2/services/ServicioIdentificacionPlus</con:endpoint><con:endpoint>https://10.54.8.26:443/idws2/services/ServicioIdentificacionPlus</con:endpoint></con:endpoints><con:operation id="c415f312-b730-423c-a0b1-7b678867b038" isOneWay="false" action="" name="consultarParametrizacion" bindingOperationName="consultarParametrizacion" type="Request-Response" outputName="consultarParametrizacionResponse" inputName="consultarParametrizacionRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="918953d6-19b3-4f66-8045-f91d152c16e9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.54.8.26:8080/idws2/services/ServicioIdentificacionPlus</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ws.id.dc.com/v1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <v1:consultarParametrizacion>\r
+         <!--Optional:-->\r
+         <v1:idUsuarioEntidad>?</v1:idUsuarioEntidad>\r
+         <v1:producto>?</v1:producto>\r
+         <v1:consecutivo>?</v1:consecutivo>\r
+         <v1:nit>?</v1:nit>\r
+      </v1:consultarParametrizacion>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.datacredito.com.co/services/ServicioIdentificacion/v1/ServicioIdentificacion/consultarParametrizacionRequest"/></con:call></con:operation><con:operation id="4a1e68b9-f78f-47e5-bc8c-ca0334907f5c" isOneWay="false" action="" name="consultarParametrizacionesCompletas" bindingOperationName="consultarParametrizacionesCompletas" type="Request-Response" outputName="consultarParametrizacionesCompletasResponse" inputName="consultarParametrizacionesCompletasRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4803f068-d400-46a3-b6b1-b9ce025b8b78" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.54.8.26:8080/idws2/services/ServicioIdentificacionPlus</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ws.id.dc.com/v1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <v1:consultarParametrizacionesCompletas>\r
+         <!--Optional:-->\r
+         <v1:idUsuarioEntidad>?</v1:idUsuarioEntidad>\r
+         <v1:producto>?</v1:producto>\r
+         <v1:tipoIdentificacion>?</v1:tipoIdentificacion>\r
+         <v1:entidad>?</v1:entidad>\r
+         <v1:indParametros>?</v1:indParametros>\r
+      </v1:consultarParametrizacionesCompletas>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.datacredito.com.co/services/ServicioIdentificacion/v1/ServicioIdentificacion/consultarParametrizacionesCompletasRequest"/></con:call></con:operation><con:operation id="06fb9586-32db-4971-b6b6-a0311c768d15" isOneWay="false" action="" name="consultarUltimoResultado" bindingOperationName="consultarUltimoResultado" type="Request-Response" outputName="consultarUltimoResultadoResponse" inputName="consultarUltimoResultadoRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="25da258f-2f29-4c30-954f-59bbff569fb1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.54.8.26:8080/idws2/services/ServicioIdentificacionPlus</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ws.id.dc.com/v1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <v1:consultarUltimoResultado>\r
+         <!--Optional:-->\r
+         <v1:idUsuarioEntidad>?</v1:idUsuarioEntidad>\r
+         <v1:producto>?</v1:producto>\r
+         <v1:nit>?</v1:nit>\r
+         <v1:tipo_identificacion>?</v1:tipo_identificacion>\r
+         <v1:identificacion>?</v1:identificacion>\r
+      </v1:consultarUltimoResultado>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.datacredito.com.co/services/ServicioIdentificacion/v1/ServicioIdentificacion/consultarUltimoResultadoRequest"/></con:call></con:operation><con:operation id="66304653-993c-4194-832d-c2bacf63782c" isOneWay="false" action="" name="preguntas" bindingOperationName="preguntas" type="Request-Response" outputName="preguntasResponse" inputName="preguntasRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="543b79b0-fe5b-4cf3-8c88-4a8ecf77f477" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.54.8.26:8080/idws2/services/ServicioIdentificacionPlus</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ws.id.dc.com/v1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <v1:preguntas>\r
+         <!--Optional:-->\r
+         <v1:idUsuarioEntidad>?</v1:idUsuarioEntidad>\r
+         <v1:paramProducto>?</v1:paramProducto>\r
+         <v1:producto>?</v1:producto>\r
+         <v1:canal>?</v1:canal>\r
+         <v1:solicitudCuestionario>\r
+            <v1:tipoId>?</v1:tipoId>\r
+            <v1:identificacion>?</v1:identificacion>\r
+            <v1:regValidacion>?</v1:regValidacion>\r
+         </v1:solicitudCuestionario>\r
+      </v1:preguntas>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.datacredito.com.co/services/ServicioIdentificacion/v1/ServicioIdentificacion/preguntasRequest"/></con:call></con:operation><con:operation id="8b4086a3-0ce7-412b-81d2-b376822d36e0" isOneWay="false" action="" name="validar" bindingOperationName="validar" type="Request-Response" outputName="validarResponse" inputName="validarRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2ebb1fab-96f8-441a-937c-e29d4779d9ea" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/mockServicioIdentificacionSoapBinding</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ws.id.dc.com/v1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <v1:validar>\r
+         <!--Optional:-->\r
+         <v1:idUsuarioEntidad>?</v1:idUsuarioEntidad>\r
+         <v1:paramProducto>?</v1:paramProducto>\r
+         <v1:producto>?</v1:producto>\r
+         <v1:canal>?</v1:canal>\r
+         <v1:datosValidacion>\r
+            <v1:identificacion>\r
+               <v1:numero>?</v1:numero>\r
+               <v1:tipo>?</v1:tipo>\r
+            </v1:identificacion>\r
+            <v1:primerApellido>?</v1:primerApellido>\r
+            <v1:nombres>?</v1:nombres>\r
+            <v1:fechaExpedicion>\r
+               <v1:timestamp>?</v1:timestamp>\r
+            </v1:fechaExpedicion>\r
+         </v1:datosValidacion>\r
+      </v1:validar>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.datacredito.com.co/services/ServicioIdentificacion/v1/ServicioIdentificacion/validarRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="3a1bb0c9-ff66-4782-978b-53deceaf44fb" isOneWay="false" action="" name="verificar" bindingOperationName="verificar" type="Request-Response" outputName="verificarResponse" inputName="verificarRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1c26ac02-1cba-4ae7-a2b2-16c2c1bc0e63" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.54.8.26:8080/idws2/services/ServicioIdentificacionPlus</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ws.id.dc.com/v1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <v1:verificar>\r
+         <!--Optional:-->\r
+         <v1:idUsuarioEntidad>?</v1:idUsuarioEntidad>\r
+         <v1:producto>?</v1:producto>\r
+         <v1:paramProducto>?</v1:paramProducto>\r
+         <v1:respuestas>\r
+            <v1:idCuestionario>?</v1:idCuestionario>\r
+            <v1:regCuestionario>?</v1:regCuestionario>\r
+            <v1:identificacion>\r
+               <v1:numero>?</v1:numero>\r
+               <v1:tipo>?</v1:tipo>\r
+            </v1:identificacion>\r
+            <!--1 or more repetitions:-->\r
+            <v1:respuesta>\r
+               <v1:idPregunta>?</v1:idPregunta>\r
+               <v1:idRespuesta>?</v1:idRespuesta>\r
+            </v1:respuesta>\r
+         </v1:respuestas>\r
+      </v1:verificar>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.datacredito.com.co/services/ServicioIdentificacion/v1/ServicioIdentificacion/verificarRequest"/></con:call></con:operation></con:interface><con:mockService id="f05aa87f-b74a-488a-9e31-3fddcd966a60" port="8088" path="/wss/idws2/services/ServicioIdentificacionPlus" host="localhost" name="ServicioIdentificacionSoapBinding MockService" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="consultarParametrizacion" id="e6678bc5-aeba-4b2b-a108-7db558c6dd34" interface="ServicioIdentificacionSoapBinding" operation="consultarParametrizacion"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="73b20b35-7bd5-4689-aaf7-61c5ac792ef6" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ws.id.dc.com/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:consultarParametrizacionResponse>
+         <v1:consultarParametrizacionReturn>?</v1:consultarParametrizacionReturn>
+      </v1:consultarParametrizacionResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.datacredito.com.co/services/ServicioIdentificacion/v1/ServicioIdentificacion/consultarParametrizacionResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="consultarParametrizacionesCompletas" id="47239035-9eb6-418b-a774-86b80f4bfe02" interface="ServicioIdentificacionSoapBinding" operation="consultarParametrizacionesCompletas"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="bf8077a2-4e21-46cb-8c42-51ec97141dfe" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ws.id.dc.com/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:consultarParametrizacionesCompletasResponse>
+         <v1:consultarParametrizacionesCompletasReturn>?</v1:consultarParametrizacionesCompletasReturn>
+      </v1:consultarParametrizacionesCompletasResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.datacredito.com.co/services/ServicioIdentificacion/v1/ServicioIdentificacion/consultarParametrizacionesCompletasResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="consultarUltimoResultado" id="461d248d-39ce-411f-a20e-a268f68f52a9" interface="ServicioIdentificacionSoapBinding" operation="consultarUltimoResultado"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="b3d53669-986e-4136-85bc-e9d8d0019f88" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ws.id.dc.com/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:consultarUltimoResultadoResponse>
+         <v1:consultarUltimoResultadoReturn>?</v1:consultarUltimoResultadoReturn>
+      </v1:consultarUltimoResultadoResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.datacredito.com.co/services/ServicioIdentificacion/v1/ServicioIdentificacion/consultarUltimoResultadoResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="preguntas" id="ea77d08b-5d56-461f-ae7c-d37ef0541122" interface="ServicioIdentificacionSoapBinding" operation="preguntas"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="e6e96295-0e3b-44cd-a907-e1699ee76d42" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ws.id.dc.com/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:preguntasResponse>
+         <v1:preguntasReturn>?</v1:preguntasReturn>
+      </v1:preguntasResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.datacredito.com.co/services/ServicioIdentificacion/v1/ServicioIdentificacion/preguntasResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="validar" id="e2fcd577-6d7f-4fea-b5ef-7b853b081f61" interface="ServicioIdentificacionSoapBinding" operation="validar"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="4a5adecd-3675-42e0-b130-97d57b804e17" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Header>
+      <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+         <wsu:Timestamp wsu:Id="Timestamp-c0a667c3-9551-43ad-a788-46d1555a3426" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+            <wsu:Created>2018-09-29T02:01:45Z</wsu:Created>
+            <wsu:Expires>2018-09-29T02:06:45Z</wsu:Expires>
+         </wsu:Timestamp>
+         <wsse:BinarySecurityToken wsu:Id="SecurityToken-d6fe969c-1ff7-4c73-83cf-51ad808e6476" EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">MIICzzCCAbegAwIBAgIEFw8N7jANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDEw1leHBlcmlhbi5zaWduMB4XDTE3MDIxMjIzNTExNFoXDTI3MDIxMDIzNTExNFowGDEWMBQGA1UEAxMNZXhwZXJpYW4uc2lnbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAIa/yy5/vDBa1S48dLA59ydh/jJtt2Tl6kV+/fDehl7wqRot+t3nYHeZOw2biM1yNgCAYRIVyfjXmHuRDrHw4vb1yicauh+aazXXhQnxTt8Ey1AvwcPoTgB1Gv0ICOeSefeCa7iKV8gqMJYQysB+Zhi5mlVoxYs+K9GtsWBsZ2LHLSJh3Gd8CUC/k+ezrF1T1VrDFWLbCE9pA27ZvdhuIKs5bqSNvERtG1OaG0vZ+zr4ld10+RpWYeUFk7JHalk/PvzrXmLJ8PJfg6LylzfK6EPaTXBalO4ePLZ2sN0rgmG98ay4zSK+WQbNh4Ar7NH7vqrOjzkxtjCelrcrEnylOD8CAwEAAaMhMB8wHQYDVR0OBBYEFFKoRnLrwR6n8x39zroCoejP01cNMA0GCSqGSIb3DQEBCwUAA4IBAQAAwcxugop52qhsYI7M201zH9xk2jGIW9HQsdAfL633E7e2pdt6Ml4AJuHpjni4ROdtF4FZEajRhFV4aa6XYB/0eN9APJDe1S4tdNr2f1OejfX90aVucpPY5iulKLvEYLvUwzSKwbBi+r9LmWn605P09m9XhGCTvwarPbuBXWBSCYEtT+5nyMhLzAA3eTrvLV6PyipUtfsCWQi+G0keKWyjeZRyJdEse1fQ5miRK21PqEoVOXnlS+pVQaWL8udMiAqHrnoVbxIPhSdrEHlI+AYW0V0n2TkEs+E6BSQyUlxWu3S/AugOEsgY+HiPPEWEz8FP+7/hJoik1t+mspM5/2xG</wsse:BinarySecurityToken>
+         <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <SignedInfo>
+               <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+               <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+               <Reference URI="#Timestamp-c0a667c3-9551-43ad-a788-46d1555a3426">
+                  <Transforms>
+                     <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                  </Transforms>
+                  <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                  <DigestValue>gbnXz3vQ063a5sC9BJXWNDcahsE=</DigestValue>
+               </Reference>
+               <Reference URI="#Body-759ca564-5dde-472b-867c-9f2f11d90604">
+                  <Transforms>
+                     <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                  </Transforms>
+                  <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                  <DigestValue>sWvYfQ6ND4wpI7IgjhcXnNwUq2A=</DigestValue>
+               </Reference>
+            </SignedInfo>
+            <SignatureValue>AoipKSGYbPypewXXwXCpSliKZUCuoDuz8JLhWK2GVlUoVaMJP3w4IpNUkvT5Q0QvZst04brAHiLVqXCmIjiP9m/1egeDW/6lkHUn3sGePUoFmYZ9ctHZAeAqmgRVsmRqpytIZZjcpJEsOuyUVaKhISgDc3YD/cEtrl7zwohrU4uFqGMBjPD6CZEQ8S43GYctQGoO2O1MlgGtuNEXIut9L3A15LYKhPg/LJx6i3Wv6clE0tHS1hipMu7javuTDhrpnE69Dyn5KM2KiTipQkBRbfRJJmqAbHaR56TtWRrLjvtVDqXguSj3oBcU0NM2ekV9PqHDZdLDX3V+/CSuSAz6Sg==</SignatureValue>
+            <KeyInfo>
+               <wsse:SecurityTokenReference xmlns="">
+                  <wsse:Reference URI="#SecurityToken-d6fe969c-1ff7-4c73-83cf-51ad808e6476" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/>
+               </wsse:SecurityTokenReference>
+            </KeyInfo>
+         </Signature>
+      </wsse:Security>
+   </soapenv:Header>
+   <soapenv:Body wsu:Id="Body-759ca564-5dde-472b-867c-9f2f11d90604" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+      <ws:validarResponse xmlns:ws="http://ws.id.dc.com/v1">
+         <ws:validarReturn><![CDATA[&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;RespValidacion valApellido="true" valNombre="true" valFechaExp="true" excluirCliente="false" alertas="false" respuestaAlerta="03" codigoAlerta="00" resultado="01" regValidacion="5792493" resultadoProceso="true" consultasDisponibles="1">&lt;Identificacion numero="01020744259" tipo="1" />&lt;Nombre>REY SANCHEZ JUAN SEBASTIAN&lt;/Nombre>&lt;FechaExpedicion timestamp="1187049600000" />&lt;/RespValidacion>]]]]>><![CDATA[</ws:validarReturn>
+      </ws:validarResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.datacredito.com.co/services/ServicioIdentificacion/v1/ServicioIdentificacion/validarResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="verificar" id="6f4b7239-2fd4-4f26-883d-342836b58da3" interface="ServicioIdentificacionSoapBinding" operation="verificar"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="bc930103-0136-43bd-b1c1-c56b071906ea" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ws.id.dc.com/v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <v1:verificarResponse>
+         <v1:verificarReturn>?</v1:verificarReturn>
+      </v1:verificarResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.datacredito.com.co/services/ServicioIdentificacion/v1/ServicioIdentificacion/verificarResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

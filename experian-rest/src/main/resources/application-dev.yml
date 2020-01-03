@@ -1,23 +1,23 @@
 operaciones:
   api:
-    urlBase: https://demo-servicesesb.datacredito.com.co
+    urlBase: http://localhost:8088
     evidente:
-      urlEvidente: /wss/idws2/services/ServicioIdentificacionPlus?wsdl
+      urlEvidente: /mockServicioIdentificacionSoapBinding?WSDL
       idUsuarioEntidad: ODAwODkyMzA=
       paramProducto: 3136
       producto: 010
       canal: 001
 security:
-  trustStore: C:/clientes/prueba/demo-servicesesb.jks
-  trustStorePassword: experian
-  keyStore: C:/clientes/prueba/demo-servicesesb.jks
-  keyStorePassword: experian
+  trustStore: C:/clientes/prueba/ks.jks
+  trustStorePassword: Punt0R3d
+  keyStore: C:/clientes/prueba/ks.jks
+  keyStorePassword: Punt0R3d
   allowInsecureParser: 1
-  certPassword: experian
-  password: experian
+  certPassword: Punt0R3d
+  password: Puntored2019
   user: 2-830513238
-  signaturePropertyFile: C:/clientes/prueba/crypto.properties
-  signatureUser: experian.sign
+  signaturePropertyFile: dev/crypto.properties
+  signatureUser: datacredito.puntored.co
   mustUnderstand: false
   signatureParts: "{Content}{http://schemas.xmlsoap.org/soap/envelope/}Body;{Element}{http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd}UsernameToken;{Element}{http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd}Timestamp;"
   signatureKeyId: DirectReference

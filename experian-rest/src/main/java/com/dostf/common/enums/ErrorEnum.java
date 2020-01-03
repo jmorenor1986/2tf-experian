@@ -14,7 +14,10 @@ public enum ErrorEnum {
 	IDUSUARIOENTIDAD("El id de la entidad es obligatorio"),
 	PRODUCTO("El producto es obligatorio"),
 	CONSECUTIVO("El consecutivo es obligatorio"),
-	NIT("El nit es obligatoriossss");
+	NIT("El nit es obligatoriossss"),
+
+    // object of preguntas
+    REG_VALIDATION_MANDATORY("El código de validación es obligatorio");
 	
 	
 	
