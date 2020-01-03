@@ -10,8 +10,6 @@ import com.dostf.dtos.evidente.PreguntasDto;
 import com.dostf.dtos.evidente.ValidarDto;
 import com.dostf.dtos.evidente.validators.PreguntasValidator;
 import com.dostf.services.evidente.IEvidenteService;
-import io.vavr.collection.Seq;
-import io.vavr.control.Option;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
