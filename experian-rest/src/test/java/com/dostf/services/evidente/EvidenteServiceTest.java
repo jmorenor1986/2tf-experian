@@ -15,13 +15,20 @@ import io.vavr.control.Validation;
 import org.json.JSONException;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
+import java.math.BigInteger;
+
 public class EvidenteServiceTest {
     private static final String EXPECTED_RESULT = "{\"result\": \"result\"}";
+    public static final String EXPECTED_MESSAGE_TIPO_IDENTIFICACION = "El tipo de identificación es obligatorio";
+    public static final String EXPECTED_MESSAGE_NUMERO_IDENTIFICACION = "El número de identificacion es obligatorio";
+    public static final String EXPECTED_MESSAGE_REQ = "El código de validación es obligatorio";
     private IEvidenteService evidenteService;
     @Mock
     private IEvidenteClient evidenteClient;
@@ -40,12 +47,15 @@ public class EvidenteServiceTest {
     private PreguntasValidator preguntasValidator;
     @Mock
     Validation<Seq<String>, PreguntasDto> seqPreguntasDtoValidation;
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
 
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         evidenteService = new EvidenteService(evidenteClient, stringUtilities);
     }
+
 
     @Test
     public void testValidarSuccess() throws Idws2Exception, JSONException {
@@ -88,15 +98,50 @@ public class EvidenteServiceTest {
     }
 
     @Test
-    public void testValidarConsultaPreguntaSuccess() throws Idws2Exception, JSONException {
-        Mockito.when(preguntasValidator.validateObject(preguntasDto)).thenReturn(seqPreguntasDtoValidation);
-        Mockito.when(evidenteClient.consultarPreguntas(preguntasDto)).thenReturn(EXPECTED_RESULT);
+    public void testValidarConsultaPreguntaErrorTipoIdentificacion() throws Idws2Exception, JSONException, MandatoryFieldException {
+        PreguntasDto preguntasDtoRequest = new PreguntasDto(null, "123456", new BigInteger("111"));
+        Mockito.when(preguntasValidator.validateObject(preguntasDtoRequest)).thenReturn(seqPreguntasDtoValidation);
+        Mockito.when(evidenteClient.consultarPreguntas(preguntasDtoRequest)).thenReturn(EXPECTED_RESULT);
         Mockito.when(stringUtilities.xmlToJson(Mockito.anyString())).thenReturn(EXPECTED_RESULT);
-        String result = evidenteService.consultarPreguntas(preguntasDto);
+        expectedException.expect(MandatoryFieldException.class);
+        expectedException.expectMessage(EXPECTED_MESSAGE_TIPO_IDENTIFICACION);
+        String result = evidenteService.consultarPreguntas(preguntasDtoRequest);
         Assert.assertNotNull(result);
     }
 
+    @Test
+    public void testValidarConsultaPreguntaErrorIdentificacion() throws Idws2Exception, JSONException, MandatoryFieldException {
+        PreguntasDto preguntasDtoRequest = new PreguntasDto("1", "", new BigInteger("111"));
+        Mockito.when(preguntasValidator.validateObject(preguntasDtoRequest)).thenReturn(seqPreguntasDtoValidation);
+        Mockito.when(evidenteClient.consultarPreguntas(preguntasDtoRequest)).thenReturn(EXPECTED_RESULT);
+        Mockito.when(stringUtilities.xmlToJson(Mockito.anyString())).thenReturn(EXPECTED_RESULT);
+        expectedException.expect(MandatoryFieldException.class);
+        expectedException.expectMessage(EXPECTED_MESSAGE_NUMERO_IDENTIFICACION);
+        String result = evidenteService.consultarPreguntas(preguntasDtoRequest);
+        Assert.assertNotNull(result);
+    }
 
+    @Test
+    public void testValidarConsultaPreguntaErrorReq() throws Idws2Exception, JSONException, MandatoryFieldException {
+        PreguntasDto preguntasDtoRequest = new PreguntasDto("1", "22222", null);
+        Mockito.when(preguntasValidator.validateObject(preguntasDtoRequest)).thenReturn(seqPreguntasDtoValidation);
+        Mockito.when(evidenteClient.consultarPreguntas(preguntasDtoRequest)).thenReturn(EXPECTED_RESULT);
+        Mockito.when(stringUtilities.xmlToJson(Mockito.anyString())).thenReturn(EXPECTED_RESULT);
+        expectedException.expect(MandatoryFieldException.class);
+        expectedException.expectMessage(EXPECTED_MESSAGE_REQ);
+        String result = evidenteService.consultarPreguntas(preguntasDtoRequest);
+        Assert.assertNotNull(result);
+    }
+
+    @Test
+    public void testValidarConsultaPreguntaSuccess() throws Idws2Exception, JSONException {
+        PreguntasDto preguntasDtoRequest = new PreguntasDto("1", "22222", new BigInteger("1"));
+        Mockito.when(preguntasValidator.validateObject(preguntasDtoRequest)).thenReturn(seqPreguntasDtoValidation);
+        Mockito.when(evidenteClient.consultarPreguntas(preguntasDtoRequest)).thenReturn(EXPECTED_RESULT);
+        Mockito.when(stringUtilities.xmlToJson(Mockito.anyString())).thenReturn(EXPECTED_RESULT);
+        String result = evidenteService.consultarPreguntas(preguntasDtoRequest);
+        Assert.assertNotNull(result);
+    }
 
 
 }

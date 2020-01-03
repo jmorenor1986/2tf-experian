@@ -46,11 +46,14 @@ public class EvidenteService implements IEvidenteService {
 
     @Override
     public String consultarPreguntas(PreguntasDto preguntasDto) throws Idws2Exception, JSONException {
-        String validation = new PreguntasValidator().validateObject(preguntasDto)
-                .getError()
-                .intersperse(",")
-                .fold("", String::concat);
-        return Optional.of(validateDtoPreguntas(validation))
+        String validation = "";
+        if (new PreguntasValidator().validateObject(preguntasDto).isInvalid()) {
+            validation = new PreguntasValidator().validateObject(preguntasDto)
+                    .getError()
+                    .intersperse(",")
+                    .fold("", String::concat);
+        }
+        return Optional.ofNullable(validateDtoPreguntas(validation))
                 .orElse(getResultPreguntas(preguntasDto));
     }
 
@@ -61,11 +64,8 @@ public class EvidenteService implements IEvidenteService {
     }
 
     private String validateDtoPreguntas(String responseDto) {
-        return Optional.of(responseDto)
-                .orElseThrow(() -> new MandatoryFieldException(responseDto));
-    }
-
-    {
-
+        if (responseDto.isEmpty())
+            return null;
+        throw new MandatoryFieldException(responseDto);
     }
 }
