@@ -12,6 +12,7 @@ import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.apache.cxf.transport.http.HTTPConduit;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -21,7 +22,7 @@ public class SecurityIdentificacion implements IWsSecurityIdentificacion {
     private final OperacionesProperties operacionesProperties;
     private final String uri;
     private final EvidenteProperties evidenteProperties;
-    private IWsSecurityConsume wsSecurityConsume;
+    private final IWsSecurityConsume wsSecurityConsume;
     private final JaxWsProxyFactoryBean jaxWsProxyFactoryBean;
     private final LoggingInInterceptor loggingInInterceptor;
     private final LoggingOutInterceptor loggingOutInterceptor;
@@ -30,16 +31,11 @@ public class SecurityIdentificacion implements IWsSecurityIdentificacion {
     private HTTPConduit httpConduit;
 
 
-    //https://www.baeldung.com/circular-dependencies-in-spring
-    @Autowired
-    public void setWsSecurityConsume(IWsSecurityConsume wsSecurityConsume) {
-        this.wsSecurityConsume = wsSecurityConsume;
-    }
-
     @Autowired
     public SecurityIdentificacion(OperacionesProperties operacionesProperties,
                                   JaxWsProxyFactoryBean jaxWsProxyFactoryBean, LoggingInInterceptor loggingInInterceptor,
-                                  LoggingOutInterceptor loggingOutInterceptor, TLSClientParameters tlsCP) {
+                                  LoggingOutInterceptor loggingOutInterceptor, TLSClientParameters tlsCP,
+                                  @Lazy IWsSecurityConsume wsSecurityConsume) {
         this.operacionesProperties = operacionesProperties;
         this.evidenteProperties = operacionesProperties.getEvidenteProperties();
         this.uri = operacionesProperties.getUrlBase().concat(evidenteProperties.getUrlEvidente());
@@ -47,6 +43,7 @@ public class SecurityIdentificacion implements IWsSecurityIdentificacion {
         this.loggingInInterceptor = loggingInInterceptor;
         this.loggingOutInterceptor = loggingOutInterceptor;
         this.tlsCP = tlsCP;
+        this.wsSecurityConsume = wsSecurityConsume;
     }
 
     @PostConstruct

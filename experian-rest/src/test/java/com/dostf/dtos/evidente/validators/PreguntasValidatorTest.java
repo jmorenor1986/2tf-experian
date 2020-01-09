@@ -24,18 +24,6 @@ public class PreguntasValidatorTest {
     }
 
     @Test
-    public void whenValidationWorks_ThenCorrect() {
-        PreguntasValidator preguntasValidator = new PreguntasValidator();
-        assertThat(preguntasValidator.validateObject(preguntasDtoValid), instanceOf(Validation.Valid.class));
-    }
-
-    @Test
-    public void whenValidationWorks_ThenInCorrect() {
-        PreguntasValidator preguntasValidator = new PreguntasValidator();
-        assertThat(preguntasValidator.validateObject(preguntasDtoInValid), instanceOf(Validation.Invalid.class));
-    }
-
-    @Test
     public void givenValidPreguntasParamsWhenValidateThenTrueWithIsInvalidMethod() {
         PreguntasValidator preguntasValidator = new PreguntasValidator();
         assertTrue(preguntasValidator.validateObject(preguntasDtoInValid).isInvalid());

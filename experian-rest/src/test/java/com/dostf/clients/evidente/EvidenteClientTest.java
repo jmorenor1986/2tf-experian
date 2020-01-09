@@ -52,7 +52,7 @@ public class EvidenteClientTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         Mockito.when(operacionesProperties.getEvidenteProperties()).thenReturn(evidenteProperties);
-        evidenteClient = new EvidenteClient(operacionesProperties, modelMapper);
+        evidenteClient = new EvidenteClient(operacionesProperties, modelMapper, port);
     }
 
     @Test
