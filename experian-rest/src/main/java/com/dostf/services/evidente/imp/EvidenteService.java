@@ -10,6 +10,8 @@ import com.dostf.dtos.evidente.PreguntasDto;
 import com.dostf.dtos.evidente.ValidarDto;
 import com.dostf.dtos.evidente.validators.PreguntasValidator;
 import com.dostf.services.evidente.IEvidenteService;
+import io.vavr.collection.Seq;
+import io.vavr.control.Validation;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,27 +47,19 @@ public class EvidenteService implements IEvidenteService {
     }
 
     @Override
-    public String consultarPreguntas(PreguntasDto preguntasDto) throws Idws2Exception, JSONException {
-        String validation = "";
-        if (preguntasValidator.validateObject(preguntasDto).isInvalid()) {
-            validation = new PreguntasValidator().validateObject(preguntasDto)
+    public String consultarPreguntas(PreguntasDto preguntasDto) throws Idws2Exception, JSONException, MandatoryFieldException {
+        final Validation<Seq<String>, PreguntasDto> validator = preguntasValidator.validateObject(preguntasDto);
+        if (validator.isInvalid())
+            throw new MandatoryFieldException(validator
                     .getError()
                     .intersperse(",")
-                    .fold("", String::concat);
-        }
-        return Optional.ofNullable(validateDtoPreguntas(validation))
-                .orElse(getResultPreguntas(preguntasDto));
+                    .fold("", String::concat));
+        return getResultPreguntas(preguntasDto);
     }
 
     private String getResultPreguntas(PreguntasDto preguntasDto) throws Idws2Exception, JSONException {
         return Optional.ofNullable(stringUtilities.xmlToJson(
                 evidenteClient.consultarPreguntas(preguntasDto)))
                 .orElseThrow(Idws2Exception::new);
-    }
-
-    private String validateDtoPreguntas(String responseDto) {
-        if (responseDto.isEmpty())
-            return null;
-        throw new MandatoryFieldException(responseDto);
     }
 }
