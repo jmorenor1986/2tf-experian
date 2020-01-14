@@ -1,15 +1,12 @@
-package com.dostf.dtos.evidente.validators;
+package com.dostf.common.validators.evidente;
 
+import com.dostf.common.validators.evidente.PreguntasValidator;
 import com.dostf.dtos.evidente.PreguntasDto;
-import io.vavr.control.Validation;
-import org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import org.hamcrest.CoreMatchers.*;
 
 import java.math.BigInteger;
 
-import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
@@ -21,18 +18,6 @@ public class PreguntasValidatorTest {
     public void setUp() {
         preguntasDtoValid = new PreguntasDto("1", "1012325270", new BigInteger("23456"));
         preguntasDtoInValid = new PreguntasDto("", "", new BigInteger("23456"));
-    }
-
-    @Test
-    public void whenValidationWorks_ThenCorrect() {
-        PreguntasValidator preguntasValidator = new PreguntasValidator();
-        assertThat(preguntasValidator.validateObject(preguntasDtoValid), instanceOf(Validation.Valid.class));
-    }
-
-    @Test
-    public void whenValidationWorks_ThenInCorrect() {
-        PreguntasValidator preguntasValidator = new PreguntasValidator();
-        assertThat(preguntasValidator.validateObject(preguntasDtoInValid), instanceOf(Validation.Invalid.class));
     }
 
     @Test

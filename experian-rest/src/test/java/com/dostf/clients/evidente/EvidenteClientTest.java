@@ -2,7 +2,6 @@ package com.dostf.clients.evidente;
 
 import co.com.datacredito.services.servicioidentificacion.v1.Idws2Exception;
 import com.dc.id.ws.v1.DatosValidacionRequest;
-import com.dc.id.ws.v1.PreguntasRequest;
 import com.dc.id.ws.v1.SolicitudCuestionarioRequest;
 import com.dostf.clients.IEvidenteClient;
 import com.dostf.clients.imp.EvidenteClient;
@@ -10,7 +9,7 @@ import com.dostf.config.properties.EvidenteProperties;
 import com.dostf.config.properties.OperacionesProperties;
 import com.dostf.dtos.evidente.PreguntasDto;
 import com.dostf.dtos.evidente.ValidarDto;
-import com.dostf.dtos.evidente.validators.PreguntasValidator;
+import com.dostf.common.validators.evidente.PreguntasValidator;
 import com.dostf.security.identificacion.imp.SecurityIdentificacion;
 import io.vavr.collection.Seq;
 import io.vavr.control.Validation;
@@ -52,7 +51,7 @@ public class EvidenteClientTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         Mockito.when(operacionesProperties.getEvidenteProperties()).thenReturn(evidenteProperties);
-        evidenteClient = new EvidenteClient(operacionesProperties, modelMapper);
+        evidenteClient = new EvidenteClient(operacionesProperties, modelMapper, port);
     }
 
     @Test

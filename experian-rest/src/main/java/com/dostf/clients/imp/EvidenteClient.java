@@ -4,6 +4,7 @@ import com.dc.id.ws.v1.SolicitudCuestionarioRequest;
 import com.dostf.dtos.evidente.PreguntasDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import com.dc.id.ws.v1.DatosValidacionRequest;
@@ -21,20 +22,15 @@ public class EvidenteClient implements IEvidenteClient {
     private final ModelMapper modelMapper;
     private final OperacionesProperties operacionesProperties;
     private final EvidenteProperties evidenteProperties;
-    private SecurityIdentificacion port;
+    private final SecurityIdentificacion port;
     private Object client;
 
-    // https://www.baeldung.com/circular-dependencies-in-spring
     @Autowired
-    public void setPort(SecurityIdentificacion port) {
-        this.port = port;
-    }
-
-    @Autowired
-    public EvidenteClient(OperacionesProperties operacionesProperties, ModelMapper modelMapper) {
+    public EvidenteClient(OperacionesProperties operacionesProperties, ModelMapper modelMapper,@Lazy SecurityIdentificacion port) {
         this.modelMapper = modelMapper;
         this.operacionesProperties = operacionesProperties;
         this.evidenteProperties = operacionesProperties.getEvidenteProperties();
+        this.port = port;
     }
 
     @Override
