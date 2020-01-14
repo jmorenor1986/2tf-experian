@@ -1,7 +1,6 @@
-package com.dostf.dtos.evidente.validators;
+package com.dostf.common.validators;
 
 import com.dostf.common.enums.ErrorEnum;
-import com.dostf.dtos.evidente.PreguntasDto;
 import io.vavr.collection.Seq;
 import io.vavr.control.Validation;
 

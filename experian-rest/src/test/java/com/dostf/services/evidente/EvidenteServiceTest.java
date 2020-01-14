@@ -8,7 +8,7 @@ import com.dostf.dtos.BaseDto;
 import com.dostf.dtos.evidente.IdentificacionRequest;
 import com.dostf.dtos.evidente.PreguntasDto;
 import com.dostf.dtos.evidente.ValidarDto;
-import com.dostf.dtos.evidente.validators.PreguntasValidator;
+import com.dostf.common.validators.evidente.PreguntasValidator;
 import com.dostf.services.evidente.imp.EvidenteService;
 import io.vavr.collection.Seq;
 import io.vavr.control.Validation;

@@ -1,15 +1,12 @@
-package com.dostf.dtos.evidente.validators;
+package com.dostf.common.validators.evidente;
 
+import com.dostf.common.validators.evidente.PreguntasValidator;
 import com.dostf.dtos.evidente.PreguntasDto;
-import io.vavr.control.Validation;
-import org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
-import org.hamcrest.CoreMatchers.*;
 
 import java.math.BigInteger;
 
-import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
