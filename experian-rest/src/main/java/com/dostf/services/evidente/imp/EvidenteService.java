@@ -21,11 +21,13 @@ public class EvidenteService implements IEvidenteService {
 
     private final IEvidenteClient evidenteClient;
     private final StringUtilities stringUtilities;
+    private final PreguntasValidator preguntasValidator;
 
     @Autowired
-    public EvidenteService(IEvidenteClient evidenteClient, StringUtilities stringUtilities) {
+    public EvidenteService(IEvidenteClient evidenteClient, StringUtilities stringUtilities, PreguntasValidator preguntasValidator) {
         this.evidenteClient = evidenteClient;
         this.stringUtilities = stringUtilities;
+        this.preguntasValidator = preguntasValidator;
     }
 
     @Override
@@ -45,7 +47,7 @@ public class EvidenteService implements IEvidenteService {
     @Override
     public String consultarPreguntas(PreguntasDto preguntasDto) throws Idws2Exception, JSONException {
         String validation = "";
-        if (new PreguntasValidator().validateObject(preguntasDto).isInvalid()) {
+        if (preguntasValidator.validateObject(preguntasDto).isInvalid()) {
             validation = new PreguntasValidator().validateObject(preguntasDto)
                     .getError()
                     .intersperse(",")
