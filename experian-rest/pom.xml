@@ -38,6 +38,12 @@
             <version>2.0.4</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.dos-tf</groupId>
+            <artifactId>historia-crediticia</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
