@@ -59,7 +59,7 @@ public class EvidenteClientTest {
     public void testValidarIdentidadOk() throws Idws2Exception {
         Mockito.when(modelMapper.map(validarDto, DatosValidacionRequest.class)).thenReturn(datosValidacionRequest);
         Mockito.when(port.getPort().validar("", "", "", "", datosValidacionRequest)).thenReturn(EXPECTED_RESULT);
-        String result = evidenteClient.validarIdentidad(Mockito.any());
+        String result = evidenteClient.validarIdentidad(validarDto);
         Assert.assertNotNull(result);
     }
 

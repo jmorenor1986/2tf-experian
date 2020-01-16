@@ -30,11 +30,11 @@ public class HistoriaCrediticiaClientTest {
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
+        client = new HistoriaCrediticiaClient(service, modelMapper);
     }
 
     @Test
-    public void historiaCrediticiaPersonaJuridicaTest() throws HC2PNJException {
-        client = new HistoriaCrediticiaClient(service, modelMapper);
+    public void historiaCrediticiaPersonaJuridicaSuccess() throws HC2PNJException {
         Mockito.when(modelMapper.map(historiaCrediticiaDTO, SolicitudPlus.class)).thenReturn(solicitudPlus);
         Mockito.when(service.consultarHC2PJ(solicitudPlus)).thenReturn(EXPECTED_RESULT);
         String result = client.getHistoriaCrediticiaPJ(historiaCrediticiaDTO);
