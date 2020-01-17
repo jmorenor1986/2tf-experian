@@ -8,16 +8,16 @@ operaciones:
       producto: 010
       canal: 001
 security:
-  trustStore: C:/clientes/prueba/demo-servicesesb.jks
+  trustStore: C:/clientes/ks.jks
   trustStorePassword: experian
-  keyStore: C:/clientes/prueba/demo-servicesesb.jks
-  keyStorePassword: experian
+  keyStore: C:/clientes/ks.jks
+  keyStorePassword: Punt0R3d
   allowInsecureParser: 1
-  certPassword: experian
-  password: experian
+  certPassword: Punt0R3d
+  password: PuntoRed2019
   user: 2-830513238
   signaturePropertyFile: dev/crypto.properties
-  signatureUser: experian.sign
+  signatureUser: datacredito.puntored.co
   mustUnderstand: false
   signatureParts: "{Content}{http://schemas.xmlsoap.org/soap/envelope/}Body;{Element}{http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd}UsernameToken;{Element}{http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd}Timestamp;"
   signatureKeyId: DirectReference

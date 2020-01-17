@@ -1,7 +1,7 @@
 package com.dostf.security.identificacion;
 
-import co.com.datacredito.services.servicioidentificacion.v1.ServicioIdentificacion;
+import com.dostf.dtos.SecurityDto;
 
 public interface IWsSecurityIdentificacion {
-    public ServicioIdentificacion getPort();
+    public Object getService(SecurityDto securityDto);
 }
