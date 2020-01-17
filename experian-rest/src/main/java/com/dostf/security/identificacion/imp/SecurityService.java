@@ -4,7 +4,7 @@ import com.dostf.config.properties.WsSecurityProperties;
 import com.dostf.dtos.SecurityDto;
 import com.dostf.security.SignaturePwdClientCallBackHandler;
 import com.dostf.security.constants.SystemProperties;
-import com.dostf.security.identificacion.IWsSecurityIdentificacion;
+import com.dostf.security.identificacion.IWsSecurityService;
 import org.apache.cxf.configuration.jsse.TLSClientParameters;
 import org.apache.cxf.frontend.ClientProxy;
 import org.apache.cxf.interceptor.LoggingInInterceptor;
@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-public class SecurityService implements IWsSecurityIdentificacion {
+public class SecurityService implements IWsSecurityService {
 
     private final JaxWsProxyFactoryBean jaxWsProxyFactoryBean;
     private final LoggingInInterceptor loggingInInterceptor;
