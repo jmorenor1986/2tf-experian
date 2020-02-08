@@ -7,7 +7,9 @@ import com.dostf.clients.IHistoriaCrediticiaClient;
 import com.dostf.dtos.historiacrediticia.HistoriaCrediticiaDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class HistoriaCrediticiaClient implements IHistoriaCrediticiaClient {
     private final HC2PNJService service;
     private final ModelMapper modelMapper;

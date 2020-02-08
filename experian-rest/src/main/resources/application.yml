@@ -7,17 +7,19 @@ operaciones:
       paramProducto: 3136
       producto: 010
       canal: 001
+    historiaCrediticiaProperties:
+      urlHistoriaCrediticia: /wss/dhws3/services/DHServicePlus
 security:
-  trustStore: C:/clientes/prueba/demo-servicesesb.jks
-  trustStorePassword: experian
-  keyStore: C:/clientes/prueba/demo-servicesesb.jks
-  keyStorePassword: experian
+  trustStore: C:/clientes/2tranfair.p12
+  trustStorePassword: 2tranfair
+  keyStore: C:/clientes/2tranfair.p12
+  keyStorePassword: 2tranfair
   allowInsecureParser: 1
-  certPassword: experian
-  password: experian
-  user: 2-830513238
+  certPassword: 2tranfair
+  password: 2Transfair2020!
+  user: 2-900926817
   signaturePropertyFile: dev/crypto.properties
-  signatureUser: experian.sign
+  signatureUser: 2tranfair.com
   mustUnderstand: false
   signatureParts: "{Content}{http://schemas.xmlsoap.org/soap/envelope/}Body;{Element}{http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd}UsernameToken;{Element}{http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd}Timestamp;"
   signatureKeyId: DirectReference
