@@ -26,4 +26,9 @@ public class HistoriaCrediticiaController {
     public String consultarHistoriaCrediticiaPJ(@RequestBody HistoriaCrediticiaDTO historiaCrediticiaDTO) throws HC2PNJException, JSONException {
         return historiaCrediticiaService.consultarHistoriaCrediticiaPJ(historiaCrediticiaDTO);
     }
+
+    @PostMapping(value = "/persona-natural", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String consultarHistoriaCrediticiaPN(HistoriaCrediticiaDTO historiaCrediticiaDTO) throws HC2PNJException, JSONException {
+        return historiaCrediticiaService.consultarHistoriaCrediticiaPN(historiaCrediticiaDTO);
+    }
 }

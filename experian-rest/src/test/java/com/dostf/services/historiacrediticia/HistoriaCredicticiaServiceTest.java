@@ -38,4 +38,12 @@ public class HistoriaCredicticiaServiceTest {
         String respuesta = historiaCrediticiaService.consultarHistoriaCrediticiaPJ(historiaCrediticiaDTO);
         Assert.assertNotNull(respuesta);
     }
+
+    @Test
+    public void testConsultarHistoriaCrediticiaPersonaNatural() throws HC2PNJException, JSONException {
+        Mockito.when(historiaCrediticiaClient.getHistoriaCrediticiaPN(historiaCrediticiaDTO)).thenReturn(EXPECTED_RESULT);
+        Mockito.when(stringUtilities.xmlToJson(EXPECTED_RESULT)).thenReturn(EXPECTED_RESULT);
+        String respuesta = historiaCrediticiaService.consultarHistoriaCrediticiaPN(historiaCrediticiaDTO);
+        Assert.assertNotNull(respuesta);
+    }
 }
