@@ -1,23 +1,27 @@
 operaciones:
   api:
-    urlBase: http://localhost:8088
-    evidente:
-      urlEvidente: /mockServicioIdentificacionSoapBinding?WSDL
+    urlBase: https://demo-servicesesb.datacredito.com.co
+    evidenteProperties:
+      urlEvidente: /wss/idws2/services/ServicioIdentificacionPlus
       idUsuarioEntidad: ODAwODkyMzA=
       paramProducto: 3136
       producto: 010
       canal: 001
+    historiaCrediticiaProperties:
+      urlHistoriaCrediticia: /wss/dhws3/services/DHServicePlus
+      clave: 12345678
+      usuario: 1012325270
 security:
-  trustStore: C:/clientes/prueba/ks.jks
-  trustStorePassword: Punt0R3d
-  keyStore: C:/clientes/prueba/ks.jks
-  keyStorePassword: Punt0R3d
+  trustStore: C:/clientes/2tranfair.p12
+  trustStorePassword: 2tranfair
+  keyStore: C:/clientes/2tranfair.p12
+  keyStorePassword: 2tranfair
   allowInsecureParser: 1
-  certPassword: Punt0R3d
-  password: Puntored2019
-  user: 2-830513238
+  certPassword: 2tranfair
+  password: 2Transfair2020!
+  user: 2-900926817
   signaturePropertyFile: dev/crypto.properties
-  signatureUser: datacredito.puntored.co
+  signatureUser: 2tranfair.com
   mustUnderstand: false
   signatureParts: "{Content}{http://schemas.xmlsoap.org/soap/envelope/}Body;{Element}{http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd}UsernameToken;{Element}{http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd}Timestamp;"
   signatureKeyId: DirectReference
