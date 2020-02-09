@@ -23,7 +23,6 @@ public class EvidenteClient implements IEvidenteClient {
     private final OperacionesProperties operacionesProperties;
     private final EvidenteProperties evidenteProperties;
     private final SecurityIdentificacion port;
-    private Object client;
 
     @Autowired
     public EvidenteClient(OperacionesProperties operacionesProperties, ModelMapper modelMapper,@Lazy SecurityIdentificacion port) {

@@ -9,6 +9,8 @@ operaciones:
       canal: 001
     historiaCrediticiaProperties:
       urlHistoriaCrediticia: /wss/dhws3/services/DHServicePlus
+      clave: 12345678
+      usuario: 1012325270
 security:
   trustStore: C:/clientes/2tranfair.p12
   trustStorePassword: 2tranfair
