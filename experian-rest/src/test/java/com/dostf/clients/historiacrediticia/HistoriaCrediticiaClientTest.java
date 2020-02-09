@@ -55,6 +55,13 @@ public class HistoriaCrediticiaClientTest {
         Mockito.when(service.consultarHC2PJ(solicitudPlus)).thenReturn(EXPECTED_RESULT);
         String result = client.getHistoriaCrediticiaPJ(historiaCrediticiaDTO);
         Assert.assertNotNull(result);
+    }
 
+    @Test
+    public void historiaCrediticiaPersonaNaturalSuccess() throws HC2PNJException {
+        Mockito.when(modelMapper.map(historiaCrediticiaDTO, SolicitudPlus.class)).thenReturn(solicitudPlus);
+        Mockito.when(service.consultarHC2(solicitudPlus)).thenReturn(EXPECTED_RESULT);
+        String result = client.getHistoriaCrediticiaPN(historiaCrediticiaDTO);
+        Assert.assertNotNull(result);
     }
 }

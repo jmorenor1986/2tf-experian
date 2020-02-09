@@ -5,4 +5,6 @@ import com.dostf.dtos.historiacrediticia.HistoriaCrediticiaDTO;
 
 public interface IHistoriaCrediticiaClient {
     String getHistoriaCrediticiaPJ(HistoriaCrediticiaDTO historiaCrediticiaDTO) throws HC2PNJException;
+
+    String getHistoriaCrediticiaPN(HistoriaCrediticiaDTO historiaCrediticiaDTO) throws HC2PNJException;
 }
