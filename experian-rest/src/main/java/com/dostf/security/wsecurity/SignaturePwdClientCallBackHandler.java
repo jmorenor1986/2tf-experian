@@ -1,4 +1,4 @@
-package com.dostf.security;
+package com.dostf.security.wsecurity;
 
 
 import org.apache.ws.security.WSPasswordCallback;

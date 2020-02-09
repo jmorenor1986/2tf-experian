@@ -12,5 +12,6 @@ import org.springframework.stereotype.Component;
 public class OperacionesProperties {
     private String urlBase;
     private EvidenteProperties evidenteProperties;
+    private HistoriaCrediticiaProperties historiaCrediticiaProperties;
 
 }

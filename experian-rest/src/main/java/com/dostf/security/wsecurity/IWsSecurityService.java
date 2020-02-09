@@ -1,4 +1,4 @@
-package com.dostf.security.identificacion;
+package com.dostf.security.wsecurity;
 
 import com.dostf.dtos.SecurityDto;
 

@@ -11,7 +11,7 @@ import com.dostf.dtos.SecurityDto;
 import com.dostf.dtos.evidente.ParametrizacionDto;
 import com.dostf.dtos.evidente.PreguntasDto;
 import com.dostf.dtos.evidente.ValidarDto;
-import com.dostf.security.identificacion.imp.SecurityService;
+import com.dostf.security.wsecurity.imp.SecurityService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,8 +22,8 @@ public class EvidenteClient implements IEvidenteClient {
     private final OperacionesProperties operacionesProperties;
     private final SecurityService port;
     private ServicioIdentificacion servicioIdentificacion;
-    private Object client;
-    private SecurityDto securityDto;
+            private Object client;
+            private SecurityDto securityDto;
     private EvidenteProperties evidenteProperties;
 
 

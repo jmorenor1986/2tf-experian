@@ -11,7 +11,7 @@ import com.dostf.config.properties.EvidenteProperties;
 import com.dostf.config.properties.OperacionesProperties;
 import com.dostf.dtos.evidente.PreguntasDto;
 import com.dostf.dtos.evidente.ValidarDto;
-import com.dostf.security.identificacion.imp.SecurityService;
+import com.dostf.security.wsecurity.imp.SecurityService;
 import io.vavr.collection.Seq;
 import io.vavr.control.Validation;
 import org.junit.Assert;

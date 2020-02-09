@@ -1,10 +1,10 @@
-package com.dostf.security.identificacion.imp;
+package com.dostf.security.wsecurity.imp;
 
 import com.dostf.config.properties.WsSecurityProperties;
 import com.dostf.dtos.SecurityDto;
-import com.dostf.security.SignaturePwdClientCallBackHandler;
+import com.dostf.security.wsecurity.SignaturePwdClientCallBackHandler;
 import com.dostf.security.constants.SystemProperties;
-import com.dostf.security.identificacion.IWsSecurityService;
+import com.dostf.security.wsecurity.IWsSecurityService;
 import org.apache.cxf.configuration.jsse.TLSClientParameters;
 import org.apache.cxf.frontend.ClientProxy;
 import org.apache.cxf.interceptor.LoggingInInterceptor;
