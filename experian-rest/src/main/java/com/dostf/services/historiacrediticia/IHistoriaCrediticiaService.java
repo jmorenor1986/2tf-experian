@@ -6,4 +6,6 @@ import org.json.JSONException;
 
 public interface IHistoriaCrediticiaService {
     String consultarHistoriaCrediticiaPJ(HistoriaCrediticiaDTO historiaCrediticiaDTO) throws HC2PNJException, JSONException;
+
+    String consultarHistoriaCrediticiaPN(HistoriaCrediticiaDTO historiaCrediticiaDTO) throws HC2PNJException, JSONException;
 }

@@ -31,4 +31,10 @@ public class HistoriaCrediciticiaControllerTest {
         String result = historiaCrediticiaController.consultarHistoriaCrediticiaPJ(historiaCrediticiaDTO);
     }
 
+    @Test
+    public void testHistoriaCrediticiaPNController() throws HC2PNJException, JSONException {
+        Mockito.when(historiaCrediticiaService.consultarHistoriaCrediticiaPN(historiaCrediticiaDTO)).thenReturn(EXPECTED_RESULT);
+        String result = historiaCrediticiaController.consultarHistoriaCrediticiaPN(historiaCrediticiaDTO);
+    }
+
 }

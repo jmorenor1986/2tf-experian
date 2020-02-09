@@ -25,4 +25,9 @@ public class HistoriaCrediticiaServiceImpl implements IHistoriaCrediticiaService
     public String consultarHistoriaCrediticiaPJ(HistoriaCrediticiaDTO historiaCrediticiaDTO) throws HC2PNJException, JSONException {
         return stringUtilities.xmlToJson(historiaCrediticiaClient.getHistoriaCrediticiaPJ(historiaCrediticiaDTO));
     }
+
+    @Override
+    public String consultarHistoriaCrediticiaPN(HistoriaCrediticiaDTO historiaCrediticiaDTO) throws HC2PNJException, JSONException {
+        return stringUtilities.xmlToJson(historiaCrediticiaClient.getHistoriaCrediticiaPN(historiaCrediticiaDTO));
+    }
 }

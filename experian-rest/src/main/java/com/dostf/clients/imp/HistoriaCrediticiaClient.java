@@ -46,4 +46,13 @@ public class HistoriaCrediticiaClient implements IHistoriaCrediticiaClient {
         solicitudPlus.setUsuario(historiaCrediticiaProperties.getProducto());
         return hc2PNJService.consultarHC2PJ(solicitudPlus);
     }
+
+    @Override
+    public String getHistoriaCrediticiaPN(HistoriaCrediticiaDTO historiaCrediticiaDTO) throws HC2PNJException {
+        SolicitudPlus solicitudPlus = modelMapper.map(historiaCrediticiaDTO, SolicitudPlus.class);
+        solicitudPlus.setClave(historiaCrediticiaProperties.getClave());
+        solicitudPlus.setProducto(historiaCrediticiaProperties.getProducto());
+        solicitudPlus.setUsuario(historiaCrediticiaProperties.getProducto());
+        return hc2PNJService.consultarHC2(solicitudPlus);
+    }
 }
