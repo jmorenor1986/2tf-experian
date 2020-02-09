@@ -83,7 +83,6 @@
                                         <exclude>com.dostf.Application</exclude>
                                         <exclude>com.dostf.config.*</exclude>
                                         <exclude>com.dostf.security.*</exclude>
-                                        <exclude>com.dostf.clients.*</exclude>
                                     </excludes>
                                     <limits>
                                         <limit>

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("experian/evidente/v1")
+@RequestMapping("v1/experian/evidente")
 public class EvidenteController {
 
     private final IEvidenteService evidenteService;
