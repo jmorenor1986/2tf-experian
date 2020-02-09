@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:ns0="http://www.datacredito.com.co/services/serviciohistoriacreditoplus/v1" targetNamespace="http://www.datacredito.com.co/services/serviciohistoriacreditoplus/v1">
+<wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema>
+<xsd:import schemaLocation="DHServicePlus.xsd2.xsd" namespace="http://ws.hc2.dc.com/v1"/></xsd:schema></wsdl:types>
+<wsdl:message name="consultarHC2PJRequest">
+<wsdl:part name="parametersPJ" element="xsns:consultarHC2PJ" xmlns:xsns="http://ws.hc2.dc.com/v1"/></wsdl:message>
+<wsdl:message name="consultarHC2PJResponse">
+<wsdl:part name="bodyPJ" element="xsns:consultarHC2PJResponse" xmlns:xsns="http://ws.hc2.dc.com/v1"/></wsdl:message>
+<wsdl:message name="consultarHC2PNRequest">
+<wsdl:part name="parametersPN" element="xsns:consultarHC2" xmlns:xsns="http://ws.hc2.dc.com/v1"/></wsdl:message>
+<wsdl:message name="consultarHC2PNResponse">
+<wsdl:part name="bodyPN" element="xsns:consultarHC2Response" xmlns:xsns="http://ws.hc2.dc.com/v1"/></wsdl:message>
+<wsdl:message name="HC2PNJException">
+<wsdl:part name="Fault" element="xsns:Fault" xmlns:xsns="http://ws.hc2.dc.com/v1"/></wsdl:message>
+<wsdl:portType name="HC2PNJService">
+<wsdl:operation name="consultarHC2">
+<wsdl:input name="consultarHC2PNRequest" message="ns0:consultarHC2PNRequest"/>
+<wsdl:output name="consultarHC2PNResponse" message="ns0:consultarHC2PNResponse"/>
+<wsdl:fault name="HC2PNJException" message="ns0:HC2PNJException"/></wsdl:operation>
+<wsdl:operation name="consultarHC2PJ">
+<wsdl:input name="consultarHC2PJRequest" message="ns0:consultarHC2PJRequest"/>
+<wsdl:output name="consultarHC2PJResponse" message="ns0:consultarHC2PJResponse"/>
+<wsdl:fault name="HC2PNJException" message="ns0:HC2PNJException"/></wsdl:operation></wsdl:portType>
+<wsdl:binding name="ServicioHistoriaCreditoPlusSoapBinding" type="ns0:HC2PNJService">
+<soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<wsdl:operation name="consultarHC2">
+<soap11:operation soapAction="" style="document"/>
+<wsdl:input name="consultarHC2PNRequest">
+<soap11:body use="literal"/></wsdl:input>
+<wsdl:output name="consultarHC2PNResponse">
+<soap11:body use="literal"/></wsdl:output>
+<wsdl:fault name="HC2PNJException">
+<soap11:fault name="HC2PNJException" use="literal"/></wsdl:fault></wsdl:operation>
+<wsdl:operation name="consultarHC2PJ">
+<soap11:operation soapAction="" style="document"/>
+<wsdl:input name="consultarHC2PJRequest">
+<soap11:body use="literal"/></wsdl:input>
+<wsdl:output name="consultarHC2PJResponse">
+<soap11:body use="literal"/></wsdl:output>
+<wsdl:fault name="HC2PNJException">
+<soap11:fault name="HC2PNJException" use="literal"/></wsdl:fault></wsdl:operation></wsdl:binding>
+<wsdl:service name="ServicioHistoriaCreditoPlus">
+<wsdl:port name="ServicioHistoriaCreditoPlus.dmz.https" binding="ns0:ServicioHistoriaCreditoPlusSoapBinding">
+<soap11:address location="https://demo-servicesesb.datacredito.com.co:443/wss/dhws3/services/DHServicePlus"/></wsdl:port>
+<wsdl:port name="ServicioHistoriaCreditoPlus.wan.http" binding="ns0:ServicioHistoriaCreditoPlusSoapBinding">
+<soap11:address location="http://demo-iservicesesb.datacredito.com.co:8080/wss/dhws3/services/DHServicePlus"/></wsdl:port>
+<wsdl:port name="ServicioHistoriaCreditoPlus.wan.https" binding="ns0:ServicioHistoriaCreditoPlusSoapBinding">
+<soap11:address location="https://demo-iservicesesb.datacredito.com.co:443/wss/dhws3/services/DHServicePlus"/></wsdl:port></wsdl:service></wsdl:definitions>

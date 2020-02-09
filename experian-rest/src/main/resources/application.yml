@@ -1,0 +1,34 @@
+operaciones:
+  api:
+    urlBase: https://demo-servicesesb.datacredito.com.co
+    evidenteProperties:
+      urlEvidente: /wss/idws2/services/ServicioIdentificacionPlus
+      idUsuarioEntidad: ODAwODkyMzA=
+      paramProducto: 3136
+      producto: 010
+      canal: 001
+    historiaCrediticiaProperties:
+      urlHistoriaCrediticia: /wss/dhws3/services/DHServicePlus
+      clave: 12345678
+      usuario: 1012325270
+      producto: 012
+security:
+  trustStore: C:/clientes/2tranfair.p12
+  trustStorePassword: 2transfair
+  keyStore: C:/clientes/2tranfair.p12
+  keyStorePassword: 2transfair
+  allowInsecureParser: 1
+  certPassword: 2transfair
+  password: 2Transfair2020!
+  user: 2-900926817
+  signaturePropertyFile: dev/crypto.properties
+  signatureUser: 2transfair.com
+  mustUnderstand: false
+  signatureParts: "{Content}{http://schemas.xmlsoap.org/soap/envelope/}Body;{Element}{http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd}UsernameToken;{Element}{http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd}Timestamp;"
+  signatureKeyId: DirectReference
+  signatureAlgorithm: http://www.w3.org/2000/09/xmldsig#rsa-sha1
+
+server:
+  servlet:
+    context-path: /experian-rest
+  port: 5000
