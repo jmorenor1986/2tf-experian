@@ -3,12 +3,13 @@ package com.dostf.services.evidente;
 import co.com.datacredito.services.servicioidentificacion.v1.Idws2Exception;
 import com.dostf.clients.IEvidenteClient;
 import com.dostf.common.exception.MandatoryFieldException;
+import com.dostf.common.validators.evidente.PreguntasValidator;
 import com.dostf.config.StringUtilities;
 import com.dostf.dtos.BaseDto;
 import com.dostf.dtos.evidente.IdentificacionRequest;
 import com.dostf.dtos.evidente.PreguntasDto;
+import com.dostf.dtos.evidente.RespuestasRequest;
 import com.dostf.dtos.evidente.ValidarDto;
-import com.dostf.common.validators.evidente.PreguntasValidator;
 import com.dostf.services.evidente.imp.EvidenteService;
 import io.vavr.collection.Seq;
 import io.vavr.control.Validation;
@@ -43,6 +44,8 @@ public class EvidenteServiceTest {
     private IdentificacionRequest identificacionRequest;
     @Mock
     private StringUtilities stringUtilities;
+    @Mock
+    private RespuestasRequest respuestasRequest;
 
     private PreguntasValidator preguntasValidator;
     @Mock
@@ -140,5 +143,13 @@ public class EvidenteServiceTest {
         Assert.assertNotNull(result);
     }
 
+    @Test
+    public void testVerificarPreguntasSuccess() throws Idws2Exception, JSONException {
+        Mockito.when(stringUtilities.xmlToJson(evidenteClient.verificarPreguntas(respuestasRequest))).thenReturn(EXPECTED_RESULT);
+        String result = evidenteService.verificarPreguntas(respuestasRequest);
+        Assert.assertNotNull(result);
+
+
+    }
 
 }

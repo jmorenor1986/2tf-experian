@@ -3,8 +3,8 @@ operaciones:
     urlBase: https://demo-servicesesb.datacredito.com.co
     evidenteProperties:
       urlEvidente: /wss/idws2/services/ServicioIdentificacionPlus
-      idUsuarioEntidad: ODAwODkyMzA=
-      paramProducto: 3136
+      idUsuarioEntidad: OTAwOTI2ODE3
+      paramProducto: 3251
       producto: 010
       canal: 001
     historiaCrediticiaProperties:

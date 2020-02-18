@@ -10,6 +10,7 @@ import com.dostf.config.properties.OperacionesProperties;
 import com.dostf.dtos.SecurityDto;
 import com.dostf.dtos.evidente.ParametrizacionDto;
 import com.dostf.dtos.evidente.PreguntasDto;
+import com.dostf.dtos.evidente.RespuestasRequest;
 import com.dostf.dtos.evidente.ValidarDto;
 import com.dostf.security.wsecurity.imp.SecurityService;
 import org.modelmapper.ModelMapper;
@@ -22,8 +23,8 @@ public class EvidenteClient implements IEvidenteClient {
     private final OperacionesProperties operacionesProperties;
     private final SecurityService port;
     private ServicioIdentificacion servicioIdentificacion;
-            private Object client;
-            private SecurityDto securityDto;
+    private Object client;
+    private SecurityDto securityDto;
     private EvidenteProperties evidenteProperties;
 
 
@@ -61,5 +62,12 @@ public class EvidenteClient implements IEvidenteClient {
                 , evidenteProperties.getProducto(), evidenteProperties.getCanal(),
                 modelMapper.map(preguntasDto, SolicitudCuestionarioRequest.class));
     }
+
+    @Override
+    public String verificarPreguntas(RespuestasRequest respuestasRequest) throws Idws2Exception {
+        return servicioIdentificacion.verificar(evidenteProperties.getIdUsuarioEntidad(), evidenteProperties.getProducto(), evidenteProperties.getParamProducto(),
+                modelMapper.map(respuestasRequest, com.dc.id.ws.v1.RespuestasRequest.class));
+    }
+
 
 }

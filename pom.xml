@@ -6,7 +6,7 @@
     <groupId>com.dos-tf</groupId>
     <artifactId>experian</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.1.1</version>
     <modules>
         <module>experian-evidente</module>
         <module>experian-rest</module>

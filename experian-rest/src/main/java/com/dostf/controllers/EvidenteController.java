@@ -1,9 +1,9 @@
 package com.dostf.controllers;
 
 import co.com.datacredito.services.servicioidentificacion.v1.Idws2Exception;
-
 import com.dostf.dtos.evidente.ParametrizacionDto;
 import com.dostf.dtos.evidente.PreguntasDto;
+import com.dostf.dtos.evidente.RespuestasRequest;
 import com.dostf.dtos.evidente.ValidarDto;
 import com.dostf.services.evidente.IEvidenteService;
 import org.json.JSONException;
@@ -38,5 +38,10 @@ public class EvidenteController {
     @PostMapping(value = "/consultarPreguntas", produces = MediaType.APPLICATION_JSON_VALUE)
     public String consultarPreguntas(@RequestBody PreguntasDto preguntasDto) throws Idws2Exception, JSONException {
         return evidenteService.consultarPreguntas(preguntasDto);
+    }
+
+    @PostMapping(value = "/verificarPreguntas", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String verificarPreguntas(@RequestBody RespuestasRequest respuestasRequest) throws Idws2Exception, JSONException {
+        return evidenteService.verificarPreguntas(respuestasRequest);
     }
 }
