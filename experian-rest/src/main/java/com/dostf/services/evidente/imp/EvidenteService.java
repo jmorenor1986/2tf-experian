@@ -4,11 +4,12 @@ package com.dostf.services.evidente.imp;
 import co.com.datacredito.services.servicioidentificacion.v1.Idws2Exception;
 import com.dostf.clients.IEvidenteClient;
 import com.dostf.common.exception.MandatoryFieldException;
+import com.dostf.common.validators.evidente.PreguntasValidator;
 import com.dostf.config.StringUtilities;
 import com.dostf.dtos.evidente.ParametrizacionDto;
 import com.dostf.dtos.evidente.PreguntasDto;
+import com.dostf.dtos.evidente.RespuestasRequest;
 import com.dostf.dtos.evidente.ValidarDto;
-import com.dostf.common.validators.evidente.PreguntasValidator;
 import com.dostf.services.evidente.IEvidenteService;
 import io.vavr.collection.Seq;
 import io.vavr.control.Validation;
@@ -55,6 +56,11 @@ public class EvidenteService implements IEvidenteService {
                     .intersperse(",")
                     .fold("", String::concat));
         return getResultPreguntas(preguntasDto);
+    }
+
+    @Override
+    public String verificarPreguntas(RespuestasRequest respuestasRequest) throws Idws2Exception, JSONException {
+        return stringUtilities.xmlToJson(evidenteClient.verificarPreguntas(respuestasRequest));
     }
 
     private String getResultPreguntas(PreguntasDto preguntasDto) throws Idws2Exception, JSONException {

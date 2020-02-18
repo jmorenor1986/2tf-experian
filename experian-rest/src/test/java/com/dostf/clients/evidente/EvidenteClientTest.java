@@ -10,6 +10,7 @@ import com.dostf.common.validators.evidente.PreguntasValidator;
 import com.dostf.config.properties.EvidenteProperties;
 import com.dostf.config.properties.OperacionesProperties;
 import com.dostf.dtos.evidente.PreguntasDto;
+import com.dostf.dtos.evidente.RespuestasRequest;
 import com.dostf.dtos.evidente.ValidarDto;
 import com.dostf.security.wsecurity.imp.SecurityService;
 import io.vavr.collection.Seq;
@@ -48,6 +49,10 @@ public class EvidenteClientTest {
     private Validation<Seq<String>, PreguntasDto> seqPreguntasDtoValidation;
     @Mock
     private ServicioIdentificacion servicioIdentificacion;
+    @Mock
+    private RespuestasRequest respuestasRequest;
+    @Mock
+    private com.dc.id.ws.v1.RespuestasRequest respuestasRequestService;
 
     @Before
     public void setUp() {
@@ -82,6 +87,16 @@ public class EvidenteClientTest {
                 .thenReturn(EXPECTED_RESULT);
         String result = evidenteClient.consultarPreguntas(preguntasDto);
         Assert.assertNotNull(result);
+    }
+
+    @Test
+    public void testPreguntaVerificar() throws Idws2Exception {
+        Mockito.when(modelMapper.map(respuestasRequest, com.dc.id.ws.v1.RespuestasRequest.class)).thenReturn(respuestasRequestService);
+        Mockito.when(servicioIdentificacion.verificar("", "", "", respuestasRequestService))
+                .thenReturn(EXPECTED_RESULT);
+        String result = evidenteClient.verificarPreguntas(respuestasRequest);
+        Assert.assertNotNull(result);
+
     }
 
 }
