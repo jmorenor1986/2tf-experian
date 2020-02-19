@@ -6,5 +6,5 @@ import java.util.List;
 
 @Data
 public class Parametros {
-    private List<Parametro> pararametro;
+    private List<Parametro> parametro;
 }

@@ -2,6 +2,8 @@ package com.dostf.clients.imp;
 
 import co.com.datacredito.services.serviciohistoriacreditoplus.v1.HC2PNJException;
 import co.com.datacredito.services.serviciohistoriacreditoplus.v1.HC2PNJService;
+import com.dc.hc2.ws.v1.Parametro;
+import com.dc.hc2.ws.v1.Parametros;
 import com.dc.hc2.ws.v1.SolicitudPlus;
 import com.dostf.clients.IHistoriaCrediticiaClient;
 import com.dostf.config.properties.HistoriaCrediticiaProperties;
@@ -10,8 +12,13 @@ import com.dostf.dtos.SecurityDto;
 import com.dostf.dtos.historiacrediticia.HistoriaCrediticiaDTO;
 import com.dostf.security.wsecurity.imp.SecurityService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class HistoriaCrediticiaClient implements IHistoriaCrediticiaClient {
