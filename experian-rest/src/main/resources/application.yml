@@ -13,9 +13,9 @@ operaciones:
       usuario: 900926817
       producto: 64
 security:
-  trustStore: C:/clientes/2tranfair.p12
+  trustStore: /tmp/2tranfair.p12
   trustStorePassword: 2transfair
-  keyStore: C:/clientes/2tranfair.p12
+  keyStore: /tmp/2tranfair.p12
   keyStorePassword: 2transfair
   allowInsecureParser: 1
   certPassword: 2transfair

@@ -12,9 +12,9 @@ operaciones:
       clave: 12345678
       usuario: 1012325270
 security:
-  trustStore: C:/clientes/2tranfair.p12
+  trustStore: /tmp/2tranfair.p12
   trustStorePassword: 2tranfair
-  keyStore: C:/clientes/2tranfair.p12
+  keyStore: /tmp/2tranfair.p12
   keyStorePassword: 2tranfair
   allowInsecureParser: 1
   certPassword: 2tranfair
@@ -30,4 +30,4 @@ security:
 server:
   servlet:
     context-path: /experian-rest
-  port: 5000
+  port: 5006
