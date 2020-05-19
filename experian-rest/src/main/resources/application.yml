@@ -9,20 +9,20 @@ operaciones:
       canal: 001
     historiaCrediticiaProperties:
       urlHistoriaCrediticia: /wss/dhws3/services/DHServicePlus
-      clave: 75LIV
-      usuario: 900926817
+      clave: 73GEN
+      usuario: 901273824
       producto: 64
 security:
-  trustStore: /tmp/2tranfair.p12
-  trustStorePassword: 2transfair
-  keyStore: /tmp/2tranfair.p12
-  keyStorePassword: 2transfair
+  trustStore: /tmp/fie.p12
+  trustStorePassword: 2tfExPortalFie.;
+  keyStore: /tmp/fie.p12
+  keyStorePassword: 2tfExPortalFie.;
   allowInsecureParser: 1
-  certPassword: 2transfair
-  password: 2Transfair2020!
-  user: 2-900926817
+  certPassword: 2tfExPortalFie.;
+  password: Educativo1
+  user: 2-901273824
   signaturePropertyFile: dev/crypto.properties
-  signatureUser: 2transfair.com
+  signatureUser: fie.com.co
   mustUnderstand: false
   signatureParts: "{Content}{http://schemas.xmlsoap.org/soap/envelope/}Body;{Element}{http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd}UsernameToken;{Element}{http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd}Timestamp;"
   signatureKeyId: DirectReference
